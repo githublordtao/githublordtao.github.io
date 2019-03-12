@@ -1,0 +1,1324 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 54px;"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="format-detection" content="telephone=no">
+	<link rel="shortcut icon" href="/favicon1.ico" type="image/x-icon" />
+    <script>
+	!function(a,b){function c(){var b=f.getBoundingClientRect().width;b/i>540&&(b=540*i);var c=b/10;f.style.fontSize=c+"px",k.rem=a.rem=c}var d,e=a.document,f=e.documentElement,g=e.querySelector('meta[name="viewport"]'),h=e.querySelector('meta[name="flexible"]'),i=0,j=0,k=b.flexible||(b.flexible={});if(g){console.warn("将根据已有的meta标签来设置缩放比例");var l=g.getAttribute("content").match(/initial\-scale=([\d\.]+)/);l&&(j=parseFloat(l[1]),i=parseInt(1/j))}else if(h){var m=h.getAttribute("content");if(m){var n=m.match(/initial\-dpr=([\d\.]+)/),o=m.match(/maximum\-dpr=([\d\.]+)/);n&&(i=parseFloat(n[1]),j=parseFloat((1/i).toFixed(2))),o&&(i=parseFloat(o[1]),j=parseFloat((1/i).toFixed(2)))}}if(!i&&!j){var p=(a.navigator.appVersion.match(/android/gi),a.navigator.appVersion.match(/iphone/gi)),q=a.devicePixelRatio;i=p?q>=3&&(!i||i>=3)?3:q>=2&&(!i||i>=2)?2:1:1,j=1/i}if(f.setAttribute("data-dpr",i),!g)if(g=e.createElement("meta"),g.setAttribute("name","viewport"),g.setAttribute("content","initial-scale="+j+", maximum-scale="+j+", minimum-scale="+j+", user-scalable=no"),f.firstElementChild)f.firstElementChild.appendChild(g);else{var r=e.createElement("div");r.appendChild(g),e.write(r.innerHTML)}a.addEventListener("resize",function(){clearTimeout(d),d=setTimeout(c,300)},!1),a.addEventListener("pageshow",function(a){a.persisted&&(clearTimeout(d),d=setTimeout(c,300))},!1),"complete"===e.readyState?e.body.style.fontSize=12*i+"px":e.addEventListener("DOMContentLoaded",function(a){e.body.style.fontSize=12*i+"px"},!1),c(),k.dpr=a.dpr=i,k.refreshRem=c,k.rem2px=function(a){var b=parseFloat(a)*this.rem;return"string"==typeof a&&a.match(/rem$/)&&(b+="px"),b},k.px2rem=function(a){var b=parseFloat(a)/this.rem;return"string"==typeof a&&a.match(/px$/)&&(b+="rem"),b}}(window,window.lib||(window.lib={}));
+	</script><meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+	
+    <style>
+	html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary { margin: 0; padding: 0; border: 0; font-size: 100%; font-weight: normal; vertical-align: baseline; background: transparent; }
+
+article, aside, figure, footer, header, nav, section, details, summary { display: block; }
+
+/* Handle box-sizing while better addressing child elements: http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+html { box-sizing: border-box; }
+
+*, *:before, *:after { box-sizing: inherit; }
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Responsive images and other embedded objects */
+/* if you don't have full control over `img` tags (if you have to overcome attributes), consider adding height: auto */
+img, object, embed { max-width: 100%; }
+
+/* Note: keeping IMG here will cause problems if you're using foreground images as sprites. In fact, it *will* cause problems with Google Maps' controls at small size. If this is the case for you, try uncommenting the following: #map img { max-width: none; } */
+/* force a vertical scrollbar to prevent a jumpy page */
+html { overflow-y: scroll; }
+
+/* we use a lot of ULs that aren't bulleted.
+you'll have to restore the bullets within content,
+which is fine because they're probably customized anyway */
+ul { list-style: none; }
+
+blockquote, q { quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after { content: ''; content: none; }
+
+a { margin: 0; padding: 0; font-size: 100%; vertical-align: baseline; background: transparent; }
+
+del { text-decoration: line-through; }
+
+abbr[title], dfn[title] { border-bottom: 1px dotted #000; cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table { border-collapse: separate; border-spacing: 0; }
+
+th { font-weight: bold; vertical-align: bottom; }
+
+td { font-weight: normal; vertical-align: top; }
+
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+
+input, select { vertical-align: middle; }
+
+pre { white-space: pre; /* CSS2 */ white-space: pre-wrap; /* CSS 2.1 */ white-space: pre-line; /* CSS 3 (and 2.1 as well, actually) */ word-wrap: break-word; /* IE */ }
+
+input[type="radio"] { vertical-align: text-bottom; }
+
+input[type="checkbox"] { vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+
+.ie6 input { vertical-align: text-bottom; }
+
+select, input, textarea { font: 99% sans-serif; }
+
+table { font-size: inherit; font: 100%; }
+
+small { font-size: 85%; }
+
+strong { font-weight: bold; }
+
+td, td img { vertical-align: top; }
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+
+sup { top: -0.5em; }
+
+sub { bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], input[type=file], button { cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea { margin: 0; }
+
+/* make buttons play nice in IE */
+button, input[type=button] { width: auto; overflow: visible; }
+
+/* scale images in IE7 more attractively */
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover (commented out as usage is rare, and the filter syntax messes with some pre-processors) .ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));} */
+/* let's clear some floats */
+.clearfix:after { content: " "; display: block; clear: both; }
+
+* { font-family: Helvetica, "Microsoft YaHei"; }
+
+/****************************************************************************************************/
+@keyframes disappear { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@-webkit-keyframes disappear { 0% { opacity: 1; }
+  100% { opacity: 0; } }
+
+@keyframes popupIn { 0% { transform: translateY(100%); }
+  100 { transform: translateY(0%); } }
+
+@-webkit-keyframes popupIn { 0% { -webkit-transform: translateY(100%); }
+  100 { -webkit-transform: translateY(0%); } }
+
+input:focus { outline: none; }
+
+.common-button { width: 9.2rem; height: 1.2266666667rem; line-height: 1.2266666667rem; text-align: center; font-size: 0.4266666667rem; color: #fff; background: #5b88fa; border: none; border-radius: 0.6133333333rem; margin: 0 auto; display: block; text-decoration: none; }
+
+.disabled-button { background: #bbbbbb; }
+
+.fixed-button { position: fixed; bottom: 0; left: 0; width: 100%; height: 1.1733333333rem; line-height: 1.1733333333rem; display: block; font-size: 0.48rem; color: #fff; text-align: center; text-decoration: none; background: #5b88fa; }
+
+.common-list { background: #fff; }
+
+.common-list li { height: 1.4666666667rem; line-height: 1.4666666667rem; border-bottom: 1px solid #e6e6e6; padding: 0 0.4rem; font-size: 0.4266666667rem; color: #333; }
+
+.common-list li label, .common-list li span { display: block; float: left; }
+
+.common-list li label { padding-right: 0.4rem; }
+
+.common-list li span { font-size: 0.3466666667rem; color: #999; }
+
+.common-list li span i { color: #333; vertical-align: top; font-style: normal; font-size: 0.6rem; }
+
+#bank-verify-note { font-size: 0.3466666667rem; color: #2ebd59; padding: 0 0 0 0.4666666667rem; height: 0.4533333333rem; width: 3.7333333333rem; margin: 1.0666666667rem auto; text-align: center; bottom: 0.6666666667rem; vertical-align: middle; background: url(../img/img-5.png) 0 50% no-repeat; background-size: 0.3733333333rem 0.4533333333rem; }
+
+/****************************************************************************************************/
+.repayment-detail.wrap { background: #f2f2f2; padding-bottom: 1.7333333333rem; }
+
+.repayment-detail.wrap .head { height: 0.8rem; line-height: 0.8rem; padding-left: 0.4rem; }
+
+.repayment-detail.wrap .head h3 { font-size: 0.32rem; color: #999; }
+
+.repayment-detail.wrap .prompt { background: #fff; padding: 0.4rem 0.4rem 0; }
+
+.repayment-detail.wrap .prompt > div { border-bottom: 1px solid #e6e6e6; padding-bottom: 0.4rem; }
+
+.repayment-detail.wrap .prompt a { display: block; font-size: 0.4266666667rem; color: #5b88fa; text-decoration: none; width: 4.3733333333rem; margin: 0 auto; position: relative; text-align: center; padding-left: 0.3733333333rem; }
+
+.repayment-detail.wrap .prompt h3 { font-size: 0.4266666667rem; text-align: center; color: #5b88fa; }
+
+.repayment-detail.wrap .prompt a.slow:before, .repayment-detail.wrap .prompt a.refuse:before { content: ''; display: block; width: 0.5733333333rem; height: 0.5733333333rem; position: absolute; top: 0; left: -0.1333333333rem; }
+
+.repayment-detail.wrap .prompt a.slow:after, .repayment-detail.wrap .prompt a.refuse:after { content: ''; display: block; width: 0.2rem; height: 0.36rem; position: absolute; right: -0.2666666667rem; top: 0.1333333333rem; }
+
+.repayment-detail.wrap .prompt a.slow:before { background: url(../img/icon_slow.png) 0 50% no-repeat; background-size: 0.5733333333rem 0.5733333333rem; }
+
+.repayment-detail.wrap .prompt a.slow:after { background: url(../img/icon_arrow.png) 0 50% no-repeat; background-size: 0.2rem 0.36rem; }
+
+.repayment-detail.wrap .prompt a.refuse:before { background: url(../img/icon_refuse.png) 0 50% no-repeat; background-size: 0.5733333333rem 0.5733333333rem; }
+
+.repayment-detail.wrap .prompt a.refuse:after { background: url(../img/icon_arrow.png) 0 50% no-repeat; background-size: 0.2rem 0.36rem; }
+
+.repayment-detail.wrap .prompt span.time { position: relative; font-size: 0.3466666667rem; width: 5.3333333333rem; padding-left: 0; text-align: left; display: block; margin: 0 auto; color: #5b88fa; }
+
+.repayment-detail.wrap .prompt span.time i { margin-right: 0.1333333333rem; background: #5b88fa; font-style: normal; color: #fff; display: inline-block; padding-left: 0.6rem; height: 0.4666666667rem; width: 2.08rem; line-height: 0.5066666667rem; border-top-right-radius: 0.0666666667rem; border-bottom-right-radius: 0.0666666667rem; font-size: 0.32rem; background: url(../img/icon_time.png) 0 50% no-repeat; background-size: 2.08rem 0.4533333333rem; }
+
+.repayment-detail.wrap .prompt span.time:after { content: ''; display: block; width: 0.2rem; height: 0.36rem; position: absolute; right: -0.4rem; top: 0.0666666667rem; background: url(../img/icon_arrow.png) 0 50% no-repeat; background-size: 0.2rem 0.36rem; }
+
+.repayment-detail.wrap > p { margin-top: 0.2666666667rem; color: #999; font-size: 0.3466666667rem; line-height: 2.5em; background: #fff; padding: 0 0.4rem; }
+
+.repayment-detail.wrap > p a { text-decoration: none; color: #5b88fa; }
+
+.repayment-detail.wrap .content { background: #fff; padding: 0.5333333333rem 0.4rem; }
+
+.repayment-detail.wrap .content ul > li { color: #999; position: relative; padding-left: 0.8rem; margin-bottom: 0.8rem; background: url(../img/icon_02.png) 0 0.1066666667rem no-repeat; background-size: 0.4666666667rem 0.4666666667rem; }
+
+.repayment-detail.wrap .content ul > li:last-child { margin-bottom: 0; }
+
+.repayment-detail.wrap .content ul > li:last-child:after { display: none; }
+
+.repayment-detail.wrap .content ul > li:first-child:before { display: none; }
+
+.repayment-detail.wrap .content ul > li:before { content: ''; display: block; width: 0.0533333333rem; height: 0.7733333333rem; background: #dddddd; position: absolute; top: -0.6666666667rem; left: 0.2rem; }
+
+.repayment-detail.wrap .content ul > li:after { content: ''; display: block; width: 0.0533333333rem; height: 100%; background: #ddd; position: absolute; top: 0.56rem; left: 0.2rem; }
+
+.repayment-detail.wrap .content ul > li h1 { font-size: 0.4266666667rem; padding-bottom: 0.1333333333rem; }
+
+.repayment-detail.wrap .content ul > li h1 span, .repayment-detail.wrap .content ul > li h1 i { padding-left: 0.2666666667rem; }
+
+.repayment-detail.wrap .content ul > li h1 i { font-style: normal; }
+
+.repayment-detail.wrap .content ul > li p, .repayment-detail.wrap .content ul > li span { font-size: 0.3466666667rem; }
+
+.repayment-detail.wrap .content ul > li.do:first-child { background-image: url(../img/icon_01.png); }
+
+.repayment-detail.wrap .content ul > li.do:first-child:after { background: #5b88fa; }
+
+.repayment-detail.wrap .content ul > li.do:first-child h1 { color: #000; }
+
+.repayment-detail.wrap .content ul > li.do:first-child h1 span { color: #333; }
+
+.repayment-detail.wrap .content ul > li.do:first-child h1 a { font-size: 0.3466666667rem; text-decoration: none; display: inline-block; margin-left: 0.1333333333rem; color: #5b88fa; position: relative; }
+
+.repayment-detail.wrap .content ul > li.do:first-child .popup-message { width: 3.6rem; position: absolute; top: 0.6666666667rem; left: -1.0666666667rem; z-index: 10; transition: all 0.5s linear; }
+
+.repayment-detail.wrap .content ul > li.do:first-child .popup-message p { background: #49b6f9; color: #fff; padding: 0.2rem 0.2666666667rem; border-radius: 0.1333333333rem; word-wrap: break-word; }
+
+.repayment-detail.wrap .content ul > li.do:first-child .popup-message p:before { content: ''; display: block; position: absolute; top: -0.2rem; left: 1.6rem; width: 0.3958666667rem; height: 0.3958666667rem; background: #49b6f9; -webkit-transform: rotate(45deg); transform: rotate(45deg); }
+
+.repayment-detail.wrap .content ul > li.do:first-child p { color: #333; }
+
+.repayment-detail.wrap .content ul > li.die:first-child { background-image: url(../img/icon_03.png); }
+
+.repayment-detail.wrap .content ul > li.die:first-child:after { background: #ffb400; }
+
+.repayment-detail.wrap .content ul > li.die:first-child h1 { color: #000; }
+
+.repayment-detail.wrap .content ul > li.die:first-child h1 span { color: #333; }
+
+.repayment-detail.wrap .content ul > li.die:first-child p { color: #333; }
+
+.repayment-detail.wrap .content ul > li.green:first-child { background-image: url(../img/icon_green.png); }
+
+.repayment-detail.wrap .content ul > li.green:first-child:after { background: #a8d995; }
+
+.repayment-detail.wrap .content ul > li.green:first-child h1 { color: #000; }
+
+.repayment-detail.wrap .content ul > li.green:first-child h1 span { color: #333; }
+
+.repayment-detail.wrap .content ul > li.green:first-child p { color: #333; }
+
+.repayment-detail.wrap .content ul > li.red:first-child { background-image: url(../img/icon_red.png); }
+
+.repayment-detail.wrap .content ul > li.red:first-child:after { background: #ff332c; }
+
+.repayment-detail.wrap .content ul > li.red:first-child h1 { color: #000; }
+
+.repayment-detail.wrap .content ul > li.red:first-child h1 span { color: #333; }
+
+.repayment-detail.wrap .content ul > li.red:first-child p { color: #333; }
+
+.repayment-detail.wrap .confirm-bankcard { margin-top: 0.8rem; }
+
+.repayment-detail.wrap .item { padding: 0.5333333333rem 0.4rem; margin: 0.2666666667rem 0; background: #fff; font-size: 0.4266666667rem; }
+
+.repayment-detail.wrap .item ul > li { line-height: 1.6em; }
+
+.repayment-detail.wrap .item span { display: inline-block; color: #333; min-width: 1.8666666667rem; }
+
+.repayment-detail.wrap .item i { display: inline-block; font-style: normal; color: #666; padding-left: 0.2666666667rem; }
+
+.repayment-detail.wrap .item a { color: #5b88fa; text-decoration: none; }
+
+.repayment-detail.wrap .item a.last { display: block; margin-left: 1.8666666667rem; }
+
+.repayment-detail.wrap .button { position: fixed; width: 100%; bottom: 0.4rem; left: 0; }
+
+.repayment-detail.wrap .button a { line-height: 1.1733333333rem; height: 1.1733333333rem; display: block; float: left; width: 4.6rem; margin-left: 0.2666666667rem; font-size: 0.48rem; color: #fff; text-align: center; text-decoration: none; background: #5b88fa; border-radius: 0.2666666667rem; }
+
+.repayment-detail.wrap .button a.the-one { width: 8rem; margin: 0 auto; float: none; letter-spacing: 0.0666666667rem; }
+
+.choose .head { height: 0.8rem; line-height: 0.8rem; padding-left: 0.4rem; }
+
+.choose .head h3 { font-size: 0.32rem; color: #999; }
+
+.choose ul li { border-bottom: 1px solid #dad9de; padding: 0 0.4rem 0 1.4666666667rem; background: url(../img/icon_04.png) 0.5066666667rem 50% no-repeat; background-size: 0.68rem 0.68rem; line-height: 1.4666666667rem; }
+
+.choose ul li:nth-child(2) { background-image: url(../img/icon_05.png); }
+
+.choose ul li:nth-child(3) { background-image: url(../img/icon_06.png); }
+
+.choose ul li a { display: block; position: relative; text-decoration: none; }
+
+.choose ul li a:after { content: ''; display: block; clear: both; }
+
+.choose ul li h2 { font-size: 0.4266666667rem; float: left; color: #333; }
+
+.choose ul li h2 b { display: inline-block; font-size: 0.2666666667rem; line-height: 1em; color: #fff; background: #ffca4c; padding: 0.1066666667rem; border-radius: 0.1066666667rem; vertical-align: 0.0266666667rem; margin-left: 0.1333333333rem; }
+
+.choose ul li span { display: block; float: right; font-size: 0.3466666667rem; color: #999; padding-right: 0.3466666667rem; }
+
+.choose ul li i { display: block; width: 0.2666666667rem; height: 0.2666666667rem; border-color: #999; border-width: 0 0 1px 1px; border-style: solid; transform: rotateZ(-135deg); -webkit-transform: rotateZ(-135deg); position: absolute; right: 0.0666666667rem; top: 0.6rem; }
+
+.choose p { font-size: 0.3466666667rem; padding: 0.2666666667rem 0.4rem 0; color: #999; }
+
+.popup .overlay { width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); position: fixed; top: 0; }
+
+.popup .overlay .tips-msg { color: #fff; font-size: 0.3466666667rem; width: 5.3333333333rem; position: absolute; top: 50%; left: 50%; text-align: center; margin: 1.3333333333rem 0 0 -2.6666666667rem; }
+
+.popup .spin { position: fixed; left: 64%; top: 58%; color: #fff; float: left; width: 2.9333333333rem; height: 2.9333333333rem; margin-left: -1.4666666667rem; margin-top: -1.4666666667rem; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; -webkit-transform: translate3d(0, 0, 0); }
+
+.popup .dialog { -webkit-transform: translate3d(0, 0, 0); background: #f2f2f2; width: 8.4666666667rem; height: 6.16rem; position: fixed; top: 50%; left: 50%; margin: -3.08rem -4.2333333333rem; padding: 0.4rem 0; line-height: 3em; text-align: center; border-radius: 0.08rem; }
+
+.popup .dialog input { position: absolute; top: -26.6666666667rem; }
+
+.popup .dialog span.close { display: inline-block; position: absolute; right: 0.2666666667rem; top: 0.5333333333rem; width: 0.6666666667rem; height: 0.6666666667rem; cursor: pointer; }
+
+.popup .dialog span.close:before, .popup .dialog span.close:after { content: ''; position: absolute; height: 2px; width: 100%; top: 50%; left: 0; margin-top: -1px; background: #666; }
+
+.popup .dialog span.close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+
+.popup .dialog span.close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+.popup .dialog h1 { font-size: 0.6666666667rem; color: #333; padding-bottom: 0.2666666667rem; }
+
+.popup .dialog h2 { font-size: 0.48rem; }
+
+.popup .dialog p { border-radius: 0.1333333333rem; padding: 0 0.5333333333rem; }
+
+.popup .dialog p i { display: block; float: left; width: 1.2266666667rem; height: 1.28rem; background: #fff; border-top: 1px solid #e6e6e6; border-bottom: 1px solid #e6e6e6; border-right: 1px solid #e6e6e6; position: relative; }
+
+.popup .dialog p i:first-child { border-left: 1px solid #e6e6e6; border-top-left-radius: 0.1333333333rem; border-bottom-left-radius: 0.1333333333rem; }
+
+.popup .dialog p i:last-child { border-top-right-radius: 0.1333333333rem; border-bottom-right-radius: 0.1333333333rem; }
+
+.popup .dialog p i.point:after { content: ''; background: #333; display: block; width: 0.2666666667rem; height: 0.2666666667rem; border-radius: 0.1333333333rem; position: absolute; top: 0.5066666667rem; left: 0.4666666667rem; }
+
+.popup .dialog .error-tips { font-size: 0.3733333333rem; line-height: 1em; padding-top: 0.2666666667rem; color: #5b88fa; }
+
+.popup .dialog a { font-size: 0.3466666667rem; color: #5b88fa; text-decoration: none; display: block; width: 100%; }
+
+.popup .pay { height: 5.2rem; margin-top: -2.6rem; }
+
+.popup .pay h2 { border-bottom: 1px solid #e6e6e6; line-height: 2em; margin-bottom: 0.5333333333rem; }
+
+.popup .error { -webkit-transform: translate3d(0, 0, 0); background: #f2f2f2; width: 8.4666666667rem; height: 5.3333333333rem; position: fixed; top: 0; bottom: 0; left: 0; right: 0; margin: auto; text-align: center; border-radius: 0.08rem; padding-top: 1rem; }
+
+.popup .error img { display: block; width: 1rem; height: 1.0266666667rem; margin: 0 auto 0.4666666667rem; }
+
+.popup .error h2 { font-size: 0.4266666667rem; color: #333; height: 1.6rem; padding: 0 0.4rem; }
+
+.popup .error p { border-top: 1px solid #e6e6e6; line-height: 4em; position: absolute; bottom: 0; left: 0; width: 100%; }
+
+.popup .error p a { display: inline-block; width: 49%; text-decoration: none; font-size: 0.4266666667rem; color: #5b88fa; }
+
+.popup .error p a:nth-child(2) { border-left: 1px solid #e6e6e6; }
+
+.popup .alert { height: 4rem; }
+
+.popup-spin .overlay { width: 100%; height: 100%; position: fixed; top: 0; }
+
+.popup-spin .content { position: fixed; top: 50%; left: 50%; background: rgba(0, 0, 0, 0.7); width: 5.3333333333rem; height: 3.2rem; margin-top: -1.6rem; margin-left: -2.6666666667rem; border-radius: 0.2rem; }
+
+.popup-spin .content .tips-msg { color: #fff; font-size: 0.3466666667rem; width: 5.3333333333rem; text-align: center; position: absolute; bottom: 0.2666666667rem; }
+
+.popup-spin .content .spin { position: fixed; left: 64%; top: 58%; color: #fff; float: left; width: 2.9333333333rem; height: 2.9333333333rem; margin-left: -1.4666666667rem; margin-top: -1.7333333333rem; -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; -webkit-transform: translate3d(0, 0, 0); }
+
+#alert.popup .error { -webkit-transform: translate3d(0, 0, 0); background: #f2f2f2; width: 8.4666666667rem; height: 4rem; position: fixed; top: 50%; left: 50%; margin: -3.08rem -4.2333333333rem; padding: 0.4rem 0; line-height: 3em; text-align: center; border-radius: 0.08rem; }
+
+#alert.popup .error h2 { font-size: 0.4266666667rem; color: #333; height: 1.6rem; padding: 0 0.4rem; }
+
+#alert.popup .error a { display: inline-block; width: 49%; text-decoration: none; font-size: 0.4266666667rem; color: #5b88fa; }
+
+.popup.comments .dialog { background: #fff; padding: 0.5333333333rem; width: 7.36rem; height: 6.8266666667rem; margin: -3.4133333333rem 0 0 -3.68rem; }
+
+.popup.comments .dialog h2 { font-size: 0.48rem; line-height: 1em; color: #333; }
+
+.popup.comments .dialog textarea { width: 6.2933333333rem; height: 2.4133333333rem; margin-top: 0.5333333333rem; border: none; background: #f2f2f2; padding: 0.1333333333rem; box-sizing: border-box; }
+
+.popup.comments .dialog textarea:focus { outline: none; }
+
+.popup.comments .dialog p { padding: 0; border-radius: inherit; }
+
+.popup.comments .dialog p:nth-child(3) { text-align: left; color: #666; line-height: 1em; padding-bottom: 0.6666666667rem; }
+
+.popup.comments .dialog p a { display: inline-block; width: 3.0533333333rem; height: 0.9466666667rem; background: #999; text-decoration: none; font-size: 0.4266666667rem; color: #fff; border-radius: 0.2rem; }
+
+.popup.comments .dialog p a:nth-child(2) { background: #5b88fa; }
+
+.popup.pop-image .dialog { width: 6.5066666667rem; height: 7.5733333333rem; margin: -3.7866666667rem -3.2533333333rem; background-color: #dfdfdf; padding-top: 0.32rem; }
+
+.popup.pop-image .dialog img { width: 5.96rem; height: 6.9466666667rem; }
+
+.pay-result { width: 10rem; }
+
+.pay-result .head { height: 0.2666666667rem; background: #f2f2f2; }
+
+.pay-result p { padding: 0 0.4rem; line-height: 3.5em; font-size: 0.3466666667rem; color: #666; }
+
+.pay-result p i { font-size: 0.3466666667rem; font-style: normal; color: #5b88fa; }
+
+.pay-result h1 { padding: 0 0.4rem; font-size: 0.4rem; color: #333; line-height: 1.7em; }
+
+.pay-result h1 span { color: #666; }
+
+.pay-result a.copy { float: right; font-size: 0.4rem; color: #5b88fa; text-decoration: none; }
+
+.pay-result .content { color: #666; font-size: 0.3733333333rem; padding-bottom: 1.3333333333rem; margin-top: 0.64rem; border-top: 0.2933333333rem solid #f2f2f2; padding-top: 0.5333333333rem; }
+
+.pay-result .content p { line-height: 1.8em; margin: 0.2666666667rem 0; }
+
+.pay-result .content p:nth-child(4) { margin-top: 30px; }
+
+.pay-result .content p span { color: #333; }
+
+.pay-result .content h2 { padding: 0 0.4rem; font-size: 0.4rem; color: #333; }
+
+.pay-result .container { color: #666; font-size: 0.3733333333rem; padding-bottom: 1.3333333333rem; border-top: 0.2933333333rem solid #f2f2f2; padding-top: 0.4rem; }
+
+.pay-result .container p { line-height: 1.8em; margin: 0.2666666667rem 0; }
+
+.pay-result .container p:last-child { line-height: 1.8em; color: #999; }
+
+.pay-result .container p span { color: #333; }
+
+.pay-result .container p a { color: #5b88fa; text-decoration: none; }
+
+.pay-result .container h2 { padding: 0 0.4rem; font-size: 0.4rem; color: #333; }
+
+.pay-result a.button { background: #fff; display: block; text-decoration: none; color: #5b88fa; font-size: 0.4rem; text-align: center; height: 1.3333333333rem; width: 10rem; line-height: 1.3333333333rem; position: fixed; bottom: 0; left: 0; border-top: 1px solid #e6e6e6; }
+
+.phone-verify { background: #f2f2f2; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
+
+.phone-verify ul { margin-top: 0.2666666667rem; }
+
+.phone-verify ul li { height: 1.4666666667rem; line-height: 1.4666666667rem; background: #fff; padding: 0 0.4rem; border-bottom: 1px solid #f2f2f2; font-size: 0.3466666667rem; }
+
+.phone-verify ul li.tel { font-size: 0.4266666667rem; color: #666; }
+
+.phone-verify ul li input { color: #999; border: none; height: 1.2rem; width: 100%; }
+
+.phone-verify ul li input.verify { width: 6.9333333333rem; }
+
+.phone-verify ul li a { display: inline-block; text-decoration: none; color: #5b88fa; }
+
+.phone-verify ul li a.send { color: #fff; background: #5b88fa; height: 0.8rem; line-height: 0.8rem; width: 2.1333333333rem; text-align: center; }
+
+.phone-verify p { font-size: 0.3466666667rem; padding: 0.1333333333rem 0.4rem; color: #999; }
+
+.phone-verify p.error { color: #5b88fa; }
+
+.phone-verify a.button { display: block; margin: 2.6666666667rem 0.4rem 0; text-decoration: none; color: #fff; text-align: center; background: #5b88fa; border-radius: 0.6666666667rem; height: 1.2rem; line-height: 1.2rem; font-size: 0.48rem; }
+
+.phone-verify p.other { margin-left: 0.4rem; padding: 0.4rem 0 0 0; }
+
+.phone-verify p.other input { display: none; }
+
+.phone-verify p.other input[type='checkbox']:checked + label i { display: block; }
+
+.phone-verify p.other label { display: block; float: left; padding-left: 0.5333333333rem; position: relative; color: #333; }
+
+.phone-verify p.other label:before { content: ''; display: block; width: 0.4rem; height: 0.4rem; background: #d9dbdb; position: absolute; left: 0; top: 50%; margin-top: -0.2rem; border-radius: 0.0666666667rem; }
+
+.phone-verify p.other label i { width: 0.4rem; height: 0.4rem; position: absolute; left: 0; top: 50%; margin-top: -0.2rem; background: url(../img/safe-icon-yes.png?20170911) 0 0 no-repeat; background-size: 0.4rem 0.4rem; display: none; }
+
+.phone-verify p.other label a { text-decoration: none; color: #5b88fa; }
+
+.result-wait { position: absolute; top: 0; bottom: 0; left: 0; right: 0; background: #f2f2f2; }
+
+.result-wait .content { position: absolute; top: 40%; margin-top: -1.6666666667rem; height: 3.3333333333rem; width: 10rem; text-align: center; }
+
+.result-wait .content img { display: block; width: 2.8933333333rem; height: 2.32rem; margin: 0 auto 0.4rem; }
+
+.result-wait .content p { font-size: 0.3466666667rem; color: #333; }
+
+.result-wait .content h1 { font-size: 0.4266666667rem; color: #333; }
+
+.result-wait .content a { display: block; width: 4.5333333333rem; margin: 0 auto; text-decoration: none; color: #fff; font-size: 0.4266666667rem; background-color: #5b88fa; border-radius: 0.1333333333rem; line-height: 1.2rem; margin-top: 0.8rem; }
+
+.result-wait .wait img { width: 7.0266666667rem; height: 2.9866666667rem; margin: 0 auto 1.2266666667rem; }
+
+div.message-nonews { top: 2.1333333333rem; }
+
+.forget-password .tab { height: 0.9333333333rem; width: 9.2rem; margin: 0.5333333333rem auto; line-height: 0.9333333333rem; text-align: center; border-radius: 0.1333333333rem; }
+
+.forget-password .tab li { float: left; width: 3.0666666667rem; height: 0.9333333333rem; font-size: 0.4266666667rem; border: 0.0266666667rem solid #5b88fa; border-right: none; color: #5b88fa; background: #fff; }
+
+.forget-password .tab li:first-child { border-top-left-radius: 0.1066666667rem; border-bottom-left-radius: 0.1066666667rem; }
+
+.forget-password .tab li:last-child { border-top-right-radius: 0.1333333333rem; border-bottom-right-radius: 0.1333333333rem; border-right: 0.0266666667rem solid #5b88fa; }
+
+.forget-password .tab li.action { color: #fff; background: #5b88fa; }
+
+.forget-password .piece { padding: 0 0.4rem; background: #fff; margin-bottom: 0.2666666667rem; }
+
+.forget-password .piece button { padding: 0 0.4rem; height: 0.8rem; line-height: 0.8rem; font-size: 0.4266666667rem; color: #fff; background: #5b88fa; border: none; border-radius: 0.4rem; }
+
+.forget-password .piece button a { text-decoration: none; color: #fff; font-size: 0.4266666667rem; }
+
+.forget-password .piece .head { height: 1.4666666667rem; line-height: 1.4666666667rem; font-size: 0.4266666667rem; border-bottom: 1px solid #e6e6e6; }
+
+.forget-password .piece .head h2 { float: left; color: #333; }
+
+.forget-password .piece .head button { float: right; margin-top: 0.3333333333rem; }
+
+.forget-password .piece .head i { font-style: normal; color: #5b88fa; display: inline-block; margin-left: 0.1333333333rem; }
+
+.forget-password .piece .content { padding: 0.4rem 0; }
+
+.forget-password .piece .content p { font-size: 0.3733333333rem; color: #666; line-height: 1.6em; }
+
+.forget-password .piece .content a { text-decoration: none; color: #5b88fa; }
+
+.alipay-certification .tips { height: 0.8rem; line-height: 0.8rem; font-size: 0.32rem; color: #999; padding-left: 0.4rem; }
+
+.alipay-certification ul > li { box-sizing: content-box; height: 1.4666666667rem; line-height: 1.4666666667rem; font-size: 0.4266666667rem; color: #333; background: #fff; border-bottom: 1px solid #e6e6e6; padding-left: 0.4rem; }
+
+.alipay-certification ul > li label { display: block; float: left; }
+
+.alipay-certification ul > li input { float: right; width: 6.8rem; height: 1.4666666667rem; border: none; color: #333; padding: 0; }
+
+.alipay-certification ul > li .user { color: #5b88fa; }
+
+.alipay-certification .code { padding-left: 0.4rem; }
+
+.alipay-certification .code input { float: left; width: 5.6rem; }
+
+.alipay-certification .code span { display: block; float: right; width: 3.0533333333rem; height: 1.24rem; margin-top: 0.1066666667rem; }
+
+.alipay-certification .code a { display: block; width: 2.0266666667rem; height: 0.7333333333rem; line-height: 0.7333333333rem; text-align: center; float: right; background: #5b88fa; color: #fff; text-decoration: none; font-size: 0.3466666667rem; margin: 0.36rem 0.4666666667rem 0 0; }
+
+.alipay-certification .tel { color: #999; }
+
+.alipay-certification a.common-button { margin-top: 1.3333333333rem; }
+
+.alipay-certification .result img { display: block; width: 3.4266666667rem; height: 3.0933333333rem; margin: 3.16rem auto 1.2rem; }
+
+.alipay-certification .result p { text-align: center; font-size: 0.4266666667rem; color: #333; line-height: 1.6em; }
+
+.alipay-certification .result p a { text-decoration: none; color: #5b88fa; font-size: 0.4266666667rem; }
+
+.bank-card { padding-top: 0.4rem; }
+
+.bank-card ul li { background: #fff; height: 1.4666666667rem; line-height: 1.4666666667rem; padding: 0 0.4rem; font-size: 0.4rem; border-bottom: 1px solid #e6e6e6; color: #333; }
+
+.bank-card ul li label { display: block; float: left; font-weight: bold; }
+
+.bank-card ul li span { padding-left: 0.4rem; float: left; display: block; line-height: 1.4666666667rem; }
+
+.bank-card ul li:last-child { border-bottom: none; }
+
+.bank-card p { padding: 0.2666666667rem 0.4rem 0; font-size: 0.3466666667rem; color: #999; line-height: 1.6em; }
+
+.bank-card .common-button { border-radius: 0.2rem; margin-top: 1.3333333333rem; }
+
+.extension .tips { height: 0.8rem; line-height: 0.8rem; padding-left: 0.4rem; font-size: 0.32rem; color: #999; }
+
+.extension ul li select { background: none; border: none; font-size: 0.5333333333rem; vertical-align: sub; appearance: none; -moz-appearance: none; -webkit-appearance: none; padding: 0; }
+
+.extension ul li i { font-size: 0.5333333333rem; }
+
+.extension p { font-size: 0.3733333333rem; color: #999; padding: 0.2933333333rem 0.4rem 0.4rem; }
+
+.extension p i { font-size: 0.4266666667rem; font-style: normal; color: #5b88fa; }
+
+.extension p a { display: block; float: right; text-decoration: none; color: #5b88fa; }
+
+.extension a.common-button { margin-top: 0.8666666667rem; }
+
+.extension .reulst img { display: block; width: 3.4266666667rem; height: 3.0933333333rem; margin: 2.6666666667rem auto 0; }
+
+.extension .reulst p { padding: 0.8rem; font-size: 0.3466666667rem; color: #333; }
+
+.extension .error img { width: 4.4133333333rem; height: 2.64rem; }
+
+.extension .info { padding: 0.4rem; }
+
+.extension .info p { padding: 0; font-size: 0.4266666667rem; line-height: 1.5em; }
+
+.tied-card { font-size: 0.4rem; }
+
+.tied-card p.tips { height: 1.2rem; line-height: 1.2rem; padding-left: 0.4rem; }
+
+.tied-card ul { padding: 0 0.4rem; }
+
+.tied-card ul li { padding: 0; box-sizing: content-box; position: relative; }
+
+.tied-card ul li label { width: 2.1333333333rem; padding-right: 0; font-weight: bold; }
+
+.tied-card ul li span { color: #333; font-size: 0.4rem; }
+
+.tied-card ul li select { background: none; border: none; vertical-align: baseline; appearance: none; -moz-appearance: none; -webkit-appearance: none; padding: 0; width: 6.9333333333rem; }
+
+.tied-card ul li p.p-bank { position: absolute; left: 2.1333333333rem; top: 0; }
+
+.tied-card ul li p.placeholder { color: #999; }
+
+.tied-card ul li p.normal { color: #000; }
+
+.tied-card ul li input { width: 7.0666666667rem; border: none; padding: 0; height: 1.4666666667rem; vertical-align: baseline; }
+
+.tied-card ul li:last-child { border-bottom: none; }
+
+.tied-card ul li.code input { width: 4.8666666667rem; }
+
+.tied-card ul li.code a { color: #5b88fa; text-decoration: none; font-size: 0.4rem; text-align: right; border-left: 1px solid #e6e6e6; height: 0.9333333333rem; display: inline-block; line-height: 0.9333333333rem; padding-left: 0.4rem; }
+
+.tied-card p.error, .tied-card p.info { color: #5b88fa; font-size: 0.3466666667rem; margin: 0.2666666667rem 0.4rem; }
+
+.tied-card .common-button { margin-top: 1.1333333333rem; border-radius: 0.6666666667rem; }
+
+.tied-card p.other { margin-left: 0.4rem; padding: 0.4rem 0 0 0; font-size: 0.3466666667rem; }
+
+.tied-card p.other input { display: none; }
+
+.tied-card p.other input[type='checkbox']:checked + label i { display: block; }
+
+.tied-card p.other label { display: block; float: left; padding-left: 0.5333333333rem; position: relative; }
+
+.tied-card p.other label:before { content: ''; display: block; width: 0.4rem; height: 0.4rem; background: #d9dbdb; position: absolute; left: 0; top: 50%; margin-top: -0.2rem; border-radius: 0.0666666667rem; }
+
+.tied-card p.other label i { width: 0.4rem; height: 0.4rem; position: absolute; left: 0; top: 50%; margin-top: -0.2rem; background: url(../img/safe-icon-yes.png) 0 0 no-repeat; background-size: 0.4rem 0.4rem; display: none; }
+
+.tied-card p.other label a { text-decoration: none; color: #5b88fa; }
+
+.more .head p { padding-left: 0.4rem; font-size: 0.3466666667rem; height: 0.8rem; color: #999; line-height: 0.8rem; }
+
+.more .head { background-color: #f2f2f2; }
+
+.more li { border-bottom: 1px solid #e6e6e6; height: 1.4666666667rem; line-height: 1.4666666667rem; }
+
+.more li label { padding-left: 0.4rem; font-size: 0.4266666667rem; color: #333333; position: absolute; }
+
+.more li input { margin-left: 2.4666666667rem; height: 1.44rem; font-size: 0.4266666667rem; width: 6.1333333333rem; border: none; display: block; }
+
+.more .footer a { display: block; border: 1px solid #5b88fa; border-radius: 0.6666666667rem; background-color: #5b88fa; color: white; height: 1.2rem; line-height: 1.2rem; text-align: center; text-decoration: none; font-size: 0.48rem; margin: 0.8666666667rem 0.4rem 0; }
+
+.pop-box { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999; display: -webkit-box; display: box; -webkit-box-orient: horizontal; -webkit-box-pack: center; -webkit-box-align: center; background: rgba(0, 0, 0, 0.4); }
+
+.pop-box .pop-con { box-sizing: border-box; position: relative; padding: 0.4rem; width: 84%; background-color: #fff; border-radius: 0.2rem; text-align: center; }
+
+.pop-box .pop-con p { padding: 1rem 0; font-size: 0.4rem; }
+
+.pop-box button { display: block; width: 100%; height: 1.04rem; background: #5b88fa; color: #fff; border: none; border-radius: 0.12rem; font-size: 0.4rem; }
+
+.message-center { line-height: 2em; }
+
+.message-center div.tab { text-align: center; margin-top: 0.32rem; font-size: 0; }
+
+.message-center div.tab a { display: inline-block; text-decoration: none; border: 1px solid #5b88fa; font-size: 0.3733333333rem; padding: 0.1333333333rem 0.8rem; color: #5b88fa; background: #fff; }
+
+.message-center div.tab a:first-child { border-right: none; border-top-left-radius: 0.1333333333rem; border-bottom-left-radius: 0.1333333333rem; }
+
+.message-center div.tab a:last-child { border-left: none; border-top-right-radius: 0.1333333333rem; border-bottom-right-radius: 0.1333333333rem; }
+
+.message-center div.tab a.current { background: #5b88fa; color: #fff; }
+
+.message-center h5 { height: 0.32rem; width: 10rem; }
+
+.message-center h2 { height: 2.2rem; width: 10rem; }
+
+.message-center h1 { padding: 0.4rem 0.4rem 0 0.4rem; font-size: 0.4266666667rem; background: #fff; color: #333; }
+
+.message-center h6 { background: #fff; font-size: 0.2933333333rem; padding: 0 0 0.16rem 0.4rem; margin-top: -0.08rem; font-family: Arial; color: #999; }
+
+.message-center .activity-a { text-decoration: none; }
+
+.message-center p { padding: 0 0.4rem 0.48rem 0.4rem; font-size: 0.3733333333rem; line-height: 1.6em; background: #fff; color: #666; }
+
+.message-center .content { background: #fff; padding-bottom: 0.48rem; }
+
+.message-center a { display: block; font-size: 0.4266666667rem; color: #333; }
+
+.message-center a span { padding: 0.28rem 0.4rem; float: left; }
+
+.message-center img { display: block; width: 9.2rem; height: 3.4666666667rem; padding: 0.0666666667rem 0; margin: 0 auto; }
+
+.wx-login { padding: 0 0.4rem; }
+
+.wx-login img { display: block; width: 2.6666666667rem; height: 2.6666666667rem; margin: 1.3333333333rem auto; }
+
+.wx-login input { border: 1px solid #5b88fa; border-radius: 0.1333333333rem; width: 100%; font-size: 0.4533333333rem; height: 0.96rem; margin-bottom: 0.5333333333rem; padding-left: 1.1466666667rem; background: url(../img/wx-phone.png) 0.4333333333rem 50% no-repeat; background-size: 0.28rem 0.5333333333rem; }
+
+.wx-login button { color: #fff; border: 0px; border-radius: 0.1333333333rem; font-size: 0.4rem; background: #5b88fa; width: 100%; line-height: 0.96rem; }
+
+.wx-login .disabled { background: #999; }
+
+.wx-password img { width: 2.1333333333rem; height: 2.1333333333rem; margin-bottom: 0; }
+
+.wx-password h4 { font-size: 0.4rem; text-align: center; margin: 0.4533333333rem 0 0.5333333333rem 0; }
+
+.wx-password input { background: url(../img/wx-icon02.png) 0.4333333333rem 50% no-repeat; }
+
+.wx-result { background: #fff; }
+
+.wx-result .content img { width: 4.5066666667rem; height: 3.0933333333rem; }
+
+.wx-result a { text-decoration: none; color: #5b88fa; }
+
+.repayment-description { width: 10rem; background: #f2f2f2; }
+
+.repayment-description h3 { color: #999; line-height: 1.1333333333rem; padding-left: 0.4rem; font-size: 0.4rem; height: 1.1333333333rem; }
+
+.repayment-description ul { background: #fff; }
+
+.repayment-description ul li { position: relative; font-size: 0.4rem; line-height: 1.3866666667rem; color: #font-color-3; margin-left: 0.4rem; border-bottom: 1px solid #f2f2f2; }
+
+.repayment-description ul li p { display: none; font-size: 0.3458666667rem; color: #999; line-height: 0.5853333333rem; padding: 0.3066666667rem 0.4rem 0.36rem 0.3333333333rem; margin-top: -0.08rem; border-top: 1px solid #f2f2f2; }
+
+.repayment-description ul li:before { content: ""; display: inline-block; position: absolute; height: 0.2933333333rem; width: 0.28rem; top: 0.4666666667rem; right: 0.4666666667rem; -webkit-transform: rotate(135deg); transform: rotate(135deg); border-top: 1px solid #999; border-right: 1px solid #999; }
+
+.repayment-description ul li.active p { display: block; }
+
+.repayment-description ul li.active:before { top: 0.6rem; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+.alipay-process { background: #fff url(../img/alipay-process.jpg) 0 0.5333333333rem no-repeat; background-size: 10rem 32.8666666667rem; width: 10rem; height: 34.4rem; }
+
+.safe-login { width: 10rem; background-color: #f2f2f2; }
+
+.safe-login h3 { font-size: 0.4266666667rem; color: #333; }
+
+.safe-login .header { display: table-cell; position: relative; background: #fff url(../img/safe-icon-01.png) 0.4rem center no-repeat; background-size: 1.2rem 1.2rem; height: 2.6666666667rem; width: 10rem; padding-left: 2.0666666667rem; vertical-align: middle; }
+
+.safe-login .header h3 { margin-top: -0.2rem; font-weight: bold; }
+
+.safe-login .header h4 { font-size: 0.3466666667rem; color: #999; }
+
+.safe-login .header:after { content: ""; display: block; position: absolute; left: 0.8rem; bottom: -0.1333333333rem; background-color: #f2f2f2; width: 0.3013333333rem; height: 0.3013333333rem; -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+
+.safe-login .h3 { line-height: 1.4666666667rem; border-bottom: 1px solid #e6e6e6; margin: 0 0.4rem; }
+
+.safe-login form label { font-size: 0.3466666667rem; color: #999; }
+
+.safe-login form .get-message { margin: 0.5333333333rem 0 0.9333333333rem 0.4rem; }
+
+.safe-login form .get-message label { background: transparent url(../img/safe-icon-02.jpg) 0 center no-repeat; background-size: 0.32rem 0.32rem; padding-left: 0.5333333333rem; line-height: 0.5333333333rem; display: block; }
+
+.safe-login form p.other { margin-left: 0.4rem; padding-bottom: 0.2666666667rem; }
+
+.safe-login form p.other input { display: none; }
+
+.safe-login form p.other input[type='checkbox']:checked + label i { display: block; }
+
+.safe-login form p.other label { display: block; float: left; padding-left: 0.5333333333rem; position: relative; }
+
+.safe-login form p.other label:before { content: ''; display: block; width: 0.4rem; height: 0.4rem; background: #d9dbdb; position: absolute; left: 0; top: 50%; margin-top: -0.2rem; border-radius: 0.0666666667rem; }
+
+.safe-login form p.other label i { width: 0.4rem; height: 0.4rem; position: absolute; left: 0; top: 50%; margin-top: -0.2rem; background: url(../img/safe-icon-yes.png) 0 0 no-repeat; background-size: 0.4rem 0.4rem; display: none; }
+
+.safe-login form a.button { display: block; color: #fff; width: 9.2rem; height: 1rem; margin: 0.2666666667rem auto; font-size: 0.48rem; background: #5b88fa; border: none; border-radius: 0.3733333333rem 0.3733333333rem; text-align: center; line-height: 1rem; }
+
+.safe-login form a.disabled { display: block; color: #fff; width: 9.2rem; height: 1rem; margin: 0.2666666667rem auto; font-size: 0.48rem; background-color: #bbbbbb; border: none; border-radius: 0.3733333333rem 0.3733333333rem; text-align: center; line-height: 1rem; }
+
+.safe-login form a { color: #5b88fa; text-decoration: none; font-size: 0.32rem; }
+
+.reg-agreement { background: #fff; }
+
+.reg-agreement .reg-wrap { line-height: 2em; font-size: 0.32rem; padding: 0.8rem 0.4rem; margin-bottom: 1.3333333333rem; }
+
+.reg-agreement h1 { font-size: 0.64rem; text-align: center; font-weight: bold; padding-bottom: 0.32rem; }
+
+.reg-agreement h2 { font-weight: bold; font-size: 0.48rem; padding: 0.32rem 0; }
+
+.reg-agreement h2.center { text-align: center; }
+
+.reg-agreement h2.normal { font-weight: normal; }
+
+.reg-agreement h2.top { margin-top: 0.8rem; }
+
+.reg-agreement h3 { font-weight: bold; }
+
+.reg-agreement h3.right { margin-left: 4rem; }
+
+.reg-agreement h3.center { text-align: center; }
+
+.reg-agreement h3.top { margin-top: 0.4rem; }
+
+.reg-agreement p { text-indent: 2em; }
+
+.reg-agreement p.bold { font-weight: bold; }
+
+.reg-agreement p.normal { text-indent: 0em; margin-bottom: 0.4rem; }
+
+.reg-agreement p.enclosure { margin-top: 0.4rem; }
+
+.reg-agreement p.right { text-align: right; }
+
+.reg-agreement p.right span { display: inline-block; margin: 0 0.0666666667rem; }
+
+.reg-agreement p.no-indent { text-indent: 0em; }
+
+.reg-agreement p.top { margin-top: 0.5333333333rem; }
+
+.reg-agreement table { border-left: 1px solid black; border-top: 1px solid black; text-align: center; width: 100%; }
+
+.reg-agreement table th, .reg-agreement table td { font-weight: normal; border-bottom: 1px solid black; border-right: 1px solid black; padding: 0.0266666667rem; }
+
+.reg-agreement table.debit { border: 1px solid black; border-collapse: collapse; width: 90%; text-align: left; margin-left: 2em; }
+
+.reg-agreement table.debit tr td:first-child { width: 40%; }
+
+.reg-agreement table.loan-scale tr td:first-child, .reg-agreement table.loan-scale tr td:nth-child(3) { width: 1.8666666667rem; }
+
+.reg-agreement table.loan-scale tr td:nth-child(2), .reg-agreement table.loan-scale tr td:nth-child(4) { width: 2.7333333333rem; }
+
+.reg-agreement .footer { width: 10rem; position: fixed; left: 0; bottom: 0; background: #fff; padding: 0.4rem 0; }
+
+.reg-agreement .footer a { display: block; font-size: 0.48rem; color: #fff; width: 9.2rem; margin: 0 auto; border-radius: 0.2666666667rem; line-height: 1.2rem; text-align: center; letter-spacing: 0.5333333333rem; background: #5b88fa; }
+
+.safe-login-phone { width: 10rem; }
+
+.safe-login-phone form { margin-top: 0.3333333333rem; background-color: #fff; }
+
+.safe-login-phone form h3 { color: #333; border-bottom: 1px solid #e6e6e6; line-height: 1.3333333333rem; padding-left: 0.4rem; font-size: 0.4266666667rem; }
+
+.safe-login-phone form input { line-height: 1.3333333333rem; padding-left: 0.4rem; border: none; font-size: 0.4266666667rem; }
+
+.safe-login-phone form button { padding: 0.2rem 0.2666666667rem; border-radius: 0.08rem; border: none; background-color: #5b88fa; float: right; margin: 0.2333333333rem 0.4rem 0 0; color: #fff; font-size: 0.4rem; }
+
+.safe-login-phone h4 { color: #999; font-size: 0.3466666667rem; line-height: 1.0133333333rem; padding-left: 0.4rem; }
+
+.safe-login-phone button.confirm { width: 9.2rem; height: 1.2rem; margin-left: 0.4rem; border: none; background-color: #5b88fa; color: #fff; font-size: 0.48rem; border-radius: 0.6rem; margin-top: 1.9333333333rem; }
+
+.safe-login-phone button.disabled { width: 9.2rem; height: 1.2rem; margin-left: 0.4rem; border: none; background-color: #bbbbbb; color: #fff; font-size: 0.48rem; border-radius: 0.6rem; margin-top: 1.9333333333rem; }
+
+.safe-login-phone p { width: 3.7333333333rem; height: 1.04rem; margin: 0 auto; background: transparent url(../img/safe-icon-03.png) 0 0 no-repeat; background-size: contain; margin-top: 6.4rem; }
+
+div.invite { width: 10rem; }
+
+div.invite div.head { height: 5.8rem; background: #fff url(../img/invite-bg.jpg) 0 0 no-repeat; background-size: 10rem 5.0933333333rem; color: #fff; font-size: 0.3733333333rem; text-align: center; padding-top: 0.8rem; }
+
+div.invite div.head i { font-style: normal; color: #faff00; font-size: 0.3733333333rem; }
+
+div.invite div.head h1 { font-size: 0.96rem; color: #faff00; padding: 0.2rem 0; }
+
+div.invite div.head a { text-decoration: none; color: #fff; display: block; margin-top: 0.4266666667rem; }
+
+div.invite div.content { margin-top: 0.4rem; background: #fff; padding-left: 0.4rem; }
+
+div.invite div.content ul li { height: 1.3333333333rem; line-height: 1.3333333333rem; border-bottom: 1px solid #e6e6e6; font-size: 0.4rem; color: #666; background: url(../img/icon_07.png) 0 50% no-repeat; background-size: 0.5866666667rem 0.56rem; padding-left: 0.8rem; padding-right: 0.4rem; text-align: right; }
+
+div.invite div.content ul li:nth-child(2) { background-image: url(../img/icon_08.png); }
+
+div.invite div.content ul li:last-child { border-bottom: none; }
+
+div.invite div.content ul li span { display: inline-block; float: left; }
+
+div.invite div.content ul li a { display: inline-block; text-decoration: none; color: #5b88fa; border: 1px solid #5b88fa; line-height: 1em; padding: 0.1333333333rem; }
+
+div.bonus { width: 10rem; }
+
+div.bonus div.top { height: 0.8533333333rem; line-height: 0.8533333333rem; background: #fffeba; padding: 0 0.4rem; color: #5b88fa; position: relative; }
+
+div.bonus div.top p { position: absolute; left: 0.4rem; top: 0; }
+
+div.bonus div.top i { font-style: normal; color: #e82100; }
+
+div.bonus div.top div { color: #e82100; }
+
+div.bonus div.top div span { display: inline-block; background: url(../img/icon_09.png) 0 50% no-repeat; background-size: 0.5333333333rem 0.5333333333rem; padding-left: 0.8rem; }
+
+div.bonus div.top div a { float: right; text-decoration: none; color: #5b88fa; }
+
+div.bonus div.tab { text-align: center; margin-top: 0.4rem; }
+
+div.bonus div.tab a { display: inline-block; text-decoration: none; border: 1px solid #5b88fa; font-size: 0.3733333333rem; padding: 0.2666666667rem 0.5333333333rem; color: #5b88fa; }
+
+div.bonus div.tab a:first-child { border-right: none; border-top-left-radius: 0.1333333333rem; border-bottom-left-radius: 0.1333333333rem; }
+
+
+div.bonus div.tab a:last-child { border-left: none; border-top-right-radius: 0.1333333333rem; border-bottom-right-radius: 0.1333333333rem; }
+
+div.bonus div.tab a.current { background: #5b88fa; color: #fff; }
+
+div.bonus div.current-bonus div.head { text-align: center; padding-top: 0.5333333333rem; border-bottom: 0.32rem solid #f2f2f2; }
+
+div.bonus div.current-bonus div.head h1 { font-size: 0.96rem; color: #5b88fa; line-height: 1.6em; }
+
+div.bonus div.current-bonus div.head h1 span { font-size: 0.4266666667rem; }
+
+div.bonus div.current-bonus div.head h1 + p { color: #666; }
+
+div.bonus div.current-bonus div.head a { display: block; text-decoration: none; width: 8.4rem; height: 0.9733333333rem; line-height: 0.9733333333rem; border-radius: 0.4rem; background: #5b88fa; font-size: 0.48rem; color: #fff; margin: 0.4rem auto 0.5333333333rem; }
+
+div.bonus div.current-bonus div.head a.disabled { background: #c8c8c8; }
+
+div.bonus div.current-bonus div.list { border-bottom: 0.32rem solid #f2f2f2; }
+
+div.bonus div.current-bonus div.list div.empty { height: 3.12rem; background: url(../img/icon_10.png) 50% 35% no-repeat; background-size: 1.0133333333rem 1.0666666667rem; }
+
+div.bonus div.current-bonus div.list div.empty h3 { text-align: center; font-size: 0.3733333333rem; color: #999; padding-top: 2.1333333333rem; }
+
+div.bonus div.current-bonus div.list h1 { height: 1.4666666667rem; line-height: 1.4666666667rem; padding: 0 0.4rem; font-size: 0.4266666667rem; border-bottom: 1px solid #e6e6e6; color: #333; }
+
+div.bonus div.current-bonus div.list ul { padding-left: 0.4rem; }
+
+div.bonus div.current-bonus div.list ul li { height: 1.4666666667rem; line-height: 1.4666666667rem; border-bottom: 1px solid #e6e6e6; }
+
+div.bonus div.current-bonus div.list ul li span { display: inline-block; width: 3.0666666667rem; line-height: 1.4em; font-size: 0.32rem; color: #666; padding-top: 0.2666666667rem; padding-left: 0.5333333333rem; }
+
+div.bonus div.current-bonus div.list ul li span i, div.bonus div.current-bonus div.list ul li span em { font-style: normal; font-size: 0.3733333333rem; }
+
+div.bonus div.current-bonus div.list ul li span i { color: #333; }
+
+div.bonus div.current-bonus div.list ul li span em { color: #2ebd59; }
+
+div.bonus div.current-bonus div.list ul li span b { font-size: 0.3733333333rem; color: #5b88fa; }
+
+div.bonus div.current-bonus div.list ul li span:last-child { color: #e90000; font-size: 0.3733333333rem; text-align: right; padding: 0; vertical-align: 0.2rem; padding-right: 0.5333333333rem; }
+
+div.bonus div.current-bonus div.list a { display: block; text-decoration: none; text-align: center; color: #5b88fa; font-size: 0.4rem; line-height: 3em; }
+
+div.bonus div.current-bonus div.info h1 { height: 1.4666666667rem; line-height: 1.4666666667rem; padding: 0 0.4rem; font-size: 0.4266666667rem; border-bottom: 1px solid #e6e6e6; color: #333; }
+
+div.bonus div.current-bonus div.info ul { padding: 0.4rem 0.4rem 1.3333333333rem; line-height: 1.8em; }
+
+div.bonus div.current-bonus div.info ul a { text-decoration: none; }
+
+div.bonus div.history div.empty { height: 4.6666666667rem; background: url(../img/icon_12.png) 50% 50% no-repeat; background-size: 2.5733333333rem 2.9733333333rem; }
+
+div.bonus div.history div.empty h3 { text-align: center; padding-top: 4rem; color: #999; }
+
+div.bonus div.history div.list-head { margin-top: 0.5333333333rem; font-size: 0.3733333333rem; color: #666; height: 1.3333333333rem; line-height: 1.3333333333rem; padding: 0 0.4rem 0 0.8rem; background: #f2f2f2; }
+
+div.bonus div.history div.list-head span { float: right; padding-right: 0.4rem; text-align: right; display: inline-block; }
+
+div.bonus div.history ul { padding-left: 0.4rem; }
+
+div.bonus div.history ul li { height: 1.7333333333rem; line-height: 1.7333333333rem; padding: 0 0.4rem; border-bottom: 1px solid #e6e6e6; }
+
+div.bonus div.history ul li span { display: inline-block; line-height: 1em; width: 4.4rem; font-size: 0.32rem; color: #666; padding-top: 0.4666666667rem; }
+
+div.bonus div.history ul li span:first-child { font-size: 0.48rem; vertical-align: top; }
+
+div.bonus div.history ul li span:last-child { text-align: right; padding-right: 0.4rem; line-height: 1.4em; }
+
+div.bonus div.history ul li span i { font-style: normal; color: #2ebd59; }
+
+.popup-bonus-success .dialog { width: 8.2666666667rem; height: 7.3333333333rem; border-radius: 0.4rem; margin-top: -3.6666666667rem; margin-left: -4.1333333333rem; background: #fff url(../img/icon_11_01.png) 50% 26% no-repeat; background-size: 2.0933333333rem 2.0666666667rem; }
+
+.popup-bonus-success .dialog span.close { top: 0.2666666667rem; }
+
+.popup-bonus-success .dialog span.close:before, .popup-bonus-success .dialog span.close:after { background: #5b88fa; }
+
+.popup-bonus-success .dialog .content { padding-top: 3.6rem; line-height: 1.8em; font-size: 0.4rem; color: #333; }
+
+.popup-bonus-success .dialog .content span { font-size: 0.3733333333rem; color: #666; }
+
+.popup-bonus-card .dialog { height: 8.5333333333rem; margin-top: -4.2666666667rem; background-image: url(../img/icon_11_02.png); background-size: 2.0666666667rem 2.0666666667rem; }
+
+.popup-bonus-card .dialog .content a { display: block; width: 7.6266666667rem; height: 1.0933333333rem; line-height: 1.0933333333rem; text-align: center; background: #5b88fa; color: #fff; margin: 0.6666666667rem auto 0; border-radius: 0.1333333333rem; }
+
+.popup-bonus-login .dialog .content p { line-height: 3em; }
+
+.toast { position: absolute; bottom: 1.3333333333rem; color: #fff; background: rgba(30, 30, 30, 0.7); font-size: 0.3466666667rem; width: 2.9333333333rem; height: 1.0666666667rem; line-height: 1.0666666667rem; border-radius: 0.5333333333rem; text-align: center; left: 50%; margin-left: -1.4666666667rem; letter-spacing: 0.0266666667rem; animation: disappear 1s linear 1s forwards; -webkit-animation: disappear 1s linear 1s forwards; }
+
+.add-quota-body { width: 10rem; background-color: #fff; padding-top: 0.0133333333rem; }
+
+.add-quota-body .authentication-information, .add-quota-body .repayment, .add-quota-body .frequency { margin: 0 0.4rem; }
+
+.add-quota-body .authentication-information, .add-quota-body .repayment { border-bottom: 1px solid #e6e6e6; padding-bottom: 0.6666666667rem; }
+
+.add-quota-body .frequency p.p2 { padding: 0.4rem 0 4rem 0; }
+
+.add-quota-body h5 { width: 10rem; height: 0.2666666667rem; background-color: #f2f2f2; }
+
+.add-quota-body h2 { color: #333; font-size: 0.4266666667rem; font-weight: bold; text-align: center; line-height: 0.9333333333rem; padding-top: 0.4rem; }
+
+.add-quota-body img { display: block; width: 5.3333333333rem; height: 4rem; margin: 0.5333333333rem auto 0; }
+
+.add-quota-body h3 { color: #5b88fa; text-align: center; font-size: 0.4266666667rem; line-height: 1.2rem; font-weight: bold; margin-top: -0.2666666667rem; }
+
+.add-quota-body p.p1 { color: #666; font-size: 0.3466666667rem; line-height: 0.48rem; }
+
+.add-quota-body p.p1 span { color: #5b88fa; }
+
+.add-quota-body p.p2 { color: #5b88fa; font-size: 0.3466666667rem; line-height: 0.48rem; }
+
+.add-quota-body ul { margin: 0.1333333333rem 0; padding-left: 0.4rem; }
+
+.add-quota-body ul li { list-style-type: disc; list-style-position: outside; font-size: 0.3466666667rem; line-height: 0.48rem; color: #333; }
+
+.add-quota-body ul li span { color: #5b88fa; }
+
+.help-center { background: #f2f2f2; padding: 1px 0; width: 10rem; }
+
+.help-center .consultation { width: 10rem; height: 2.5333333333rem; background: #f2f2f2; font-size: 0; }
+
+.help-center .consultation .online-consultation, .help-center .consultation .phone-consultation, .help-center .consultation .weixin-consultation { display: block; background: #fff; text-decoration: none; }
+
+.help-center .consultation .online-consultation h4, .help-center .consultation .phone-consultation h4, .help-center .consultation .phone-consultation h4 { font-size: 0.4rem; color: #5b88fa; text-align: center; position: relative; margin-top: 1.6rem; }
+
+.help-center .consultation .online-consultation h4:before, .help-center .consultation .phone-consultation h4:before, .help-center .consultation .weixin-consultation h4:before { content: ''; width: 1.1866666667rem; height: 1.1866666667rem; position: absolute; top: -1.3333333333rem; left: 1.06459rem; }
+
+.help-center .consultation .online-consultation { display: inline-block; width: 3.3159259259rem; height: 2.5333333333rem; }
+
+.help-center .consultation .online-consultation h4:before { background: transparent url("../help-center/helpCenter-icon-06.png") 0 0 no-repeat; background-size: 1.1866666667rem 1.1866666667rem; }
+
+.help-center .consultation .phone-consultation { display: inline-block; width: 3.3159259259rem; height: 2.5333333333rem; margin-left: 0.0264333333rem; }
+
+.help-center .consultation .phone-consultation h4:before { background: transparent url("../help-center/helpCenter-icon-07.png") 0 0 no-repeat; background-size: 1.1866666667rem 1.1866666667rem; }
+
+.help-center .consultation .weixin-consultation { display: inline-block; width: 3.3159259259rem; height: 2.5333333333rem; margin-left: 0.0264333333rem; }
+
+.help-center .consultation .weixin-consultation h4:before { background: transparent url("../help-center/helpCenter-icon-08.png") 0 0 no-repeat; background-size: 1.1866666667rem 1.1866666667rem; }
+
+.help-center > div { background: #fff; margin-top: 0.3333333333rem; font-size: 0rem; }
+
+.help-center h3 { display: inline-block; width: 2.4666666667rem; height: 4.2133333333rem; padding-top: 2.3333333333rem; font-size: 0.4rem; color: #5b88fa; border-right: 1px solid #e6e6e6; vertical-align: top; text-align: center; box-sizing: border-box; }
+
+.help-center h3::after { content: ""; display: inline-block; width: 0.24rem; height: 0.2333333333rem; border-top: 1px solid #5b88fa; border-right: 1px solid #5b88fa; -webkit-transform: rotate(45deg); transform: rotate(45deg); box-sizing: border-box; }
+
+.help-center .auth h3 { background: transparent url(../help-center/helpCenter-icon-01.png) 50% 35% no-repeat; background-size: 1.3333333333rem 1rem; }
+
+.help-center .loan h3 { background: transparent url(../help-center/helpCenter-icon-02.png) 50% 35% no-repeat; background-size: 1.3333333333rem 1rem; }
+
+.help-center .repayment h3 { background: transparent url(../help-center/helpCenter-icon-03.png) 50% 35% no-repeat; background-size: 1.3333333333rem 1rem; }
+
+.help-center .cost h3 { background: transparent url(../help-center/helpCenter-icon-04.png) 50% 35% no-repeat; background-size: 1.3333333333rem 1rem; }
+
+.help-center .other { margin-bottom: 0.6rem; }
+
+.help-center .other h3 { background: transparent url(../help-center/helpCenter-icon-05.png) 50% 35% no-repeat; background-size: 1.3333333333rem 1rem; }
+
+.help-center ul { display: inline-block; width: 7.5333333333rem; }
+
+.help-center ul li { font-size: 0.4rem; color: #333; line-height: 1.4rem; padding-left: 0.4rem; border-bottom: 1px solid #e6e6e6; box-sizing: border-box; }
+
+.help-center ul li:last-child { border-bottom: none; }
+
+.help-center li:hover, .help-center li:active { background-color: #DDD; -webkit-transition: all .4s ease-in-out; transition: all .4s ease-in-out; }
+
+.help-description { width: 10rem; }
+
+.help-description ul { margin-top: 0.3333333333rem; background-color: #fff; }
+
+.help-description ul li { position: relative; font-size: 0.4rem; line-height: 1.3866666667rem; color: #font-color-3; margin-left: 0.4rem; border-bottom: 1px solid #f2f2f2; }
+
+.help-description ul li span { display: block; margin-right: 1.0666666667rem; line-height: 0.8rem; }
+
+.help-description ul li p { display: none; font-size: 0.3458666667rem; color: #666; line-height: 0.5853333333rem; padding: 0.3066666667rem 0.4rem 0.36rem 0.3333333333rem; margin-top: -0.08rem; border-top: 1px solid #f2f2f2; }
+
+.help-description ul li:before { content: ""; display: inline-block; position: absolute; height: 0.2933333333rem; width: 0.28rem; top: 0.4666666667rem; right: 0.4666666667rem; -webkit-transform: rotate(135deg); transform: rotate(135deg); border-top: 1px solid #999; border-right: 1px solid #999; }
+
+.help-description ul li.active p { display: block; }
+
+.help-description ul li.active:before { top: 0.6rem; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+.use-instruction { background-color: #fff; margin-top: 0.5333333333rem; margin-bottom: 1.6666666667rem; color: #333; }
+
+.use-instruction h3 { font-size: 0.4266666667rem; line-height: 1.3333333333rem; padding: 0 0.4rem; }
+
+.use-instruction p { font-size: 0.3733333333rem; line-height: 0.56rem; margin-top: -0.0933333333rem; padding: 0 0.4rem 0.44rem; border-bottom: 1px solid #e6e6e6; }
+
+.use-instruction p:last-child { border: none; }
+
+.confirm-bankcard { width: 10rem; }
+
+.confirm-bankcard .head { background: #fff; margin-top: 0.7333333333rem; padding: 0.4266666667rem 0.4rem; }
+
+.confirm-bankcard .head h3 { font-size: 0.4266666667rem; line-height: 0.64rem; background: transparent url(../img/confirm-bankcard-icon-01.png) 0 center no-repeat; background-size: 0.4666666667rem 0.4666666667rem; padding-left: 0.7333333333rem; }
+
+.confirm-bankcard .head h4 { font-size: 0.32rem; line-height: 0.48rem; padding-left: 0.7333333333rem; }
+
+.confirm-bankcard .content { margin-top: 0.2933333333rem; background: #fff; font-size: 0.3733333333rem; padding: 0 0.4rem 0.4rem; }
+
+.confirm-bankcard .content h3 { line-height: 1.44rem; float: left; }
+
+.confirm-bankcard .content h3.right { float: right; }
+
+.confirm-bankcard .content p { clear: both; color: #5b88fa; }
+
+.confirm-bankcard form .code { padding: 0 0.4rem 0.4rem; background: #fff; }
+
+.confirm-bankcard form .code input { line-height: 1rem; width: 5.6rem; padding-left: 0.4666666667rem; font-size: 0.3733333333rem; border: 1px solid #999; }
+
+.confirm-bankcard form .code button { background: #5b88fa; color: #fff; border: none; width: 3.3333333333rem; float: right; line-height: 1.0666666667rem; font-size: 0.3466666667rem; }
+
+.confirm-bankcard form .code button[disabled='disabled'] { line-height: 1rem; background: #e6e6e6; color: #666; border: 1px solid #999; }
+
+.confirm-bankcard form .code p { color: #5b88fa; font-size: 0.32rem; padding: 0.1333333333rem 0.4666666667rem 0; }
+
+.confirm-bankcard form .code a { display: inline-block; color: #0088e4; text-decoration: none; font-size: 0.32rem; padding: 0.1333333333rem 0.4666666667rem 0; }
+
+.confirm-bankcard form a.button { display: block; background: #5b88fa; color: #fff; font-weight: bold; font-size: 0.4266666667rem; text-align: center; line-height: 1.2266666667rem; width: 9.2rem; margin: 0.8666666667rem auto 0; border-radius: 0.6rem; text-decoration: none; }
+
+.confirm-bankcard form a.disabled { background: #999; }
+
+.forward-app { width: 10rem; height: 17.7866666667rem; margin: 0 auto; background: transparent url(../img/forwardapp-02.jpg) 0 0 no-repeat; background-size: 10rem 17.7866666667rem; padding-top: 1px; }
+
+.forward-app a { color: #300000; display: block; width: 6.8rem; height: 1.1333333333rem; line-height: 1.1333333333rem; margin: 12.9333333333rem auto 0; text-align: center; font-size: 0.64rem; letter-spacing: 0.1333333333rem; background: #ffd72b; border-radius: 0.2666666667rem; }
+
+.cardlevel-description { background: #fff; padding: 0 0.4rem 1px; margin-top: 0.2933333333rem; }
+
+.cardlevel-description h3 { color: #333; font-size: 0.4266666667rem; line-height: 0.8rem; padding-top: 0.3466666667rem; }
+
+.cardlevel-description p { color: #666; font-size: 0.3466666667rem; line-height: 0.6133333333rem; padding-bottom: 0.5333333333rem; border-bottom: 1px solid #e6e6e6; }
+
+.cardlevel-description p span { display: block; text-indent: 2em; }
+
+.cardlevel-description table { border-collapse: collapse; text-align: center; border: 1px solid #e6e6e6; width: 9.2rem; height: 4.5333333333rem; margin-bottom: 0.6666666667rem; font-size: 0.3733333333rem; }
+
+.cardlevel-description table tr, .cardlevel-description table th, .cardlevel-description table td { border: 1px solid #e6e6e6; vertical-align: middle; }
+
+.cardlevel-description table tr th:first-child, .cardlevel-description table tr td:first-child { color: #666; }
+
+.cardlevel-description table tr th:nth-child(2), .cardlevel-description table tr td:nth-child(2) { color: #5b88fa; }
+
+.cardlevel-description table tr th:last-child, .cardlevel-description table tr td:last-child { color: #5b88fa; }
+
+.cross-error { text-align: center; }
+
+.cross-error img { margin-top: 2.6666666667rem; width: 1rem; height: 1.0266666667rem; }
+
+.cross-error h3 { margin-top: 0.4rem; font-size: 0.4rem; }
+
+.quick-loan-body { background: #f2f2f2; width: 10rem; }
+
+.quick-loan-body img { width: 10rem; height: 3.7866666667rem; }
+
+.quick-loan-body ul { margin-top: 0.3333333333rem; background: #fff; }
+
+.quick-loan-body li { border-bottom: 1px solid #e6e6e6; height: 2.4rem; padding: 0.36rem 0.4rem; position: relative; }
+
+.quick-loan-body li img { display: inline-block; width: 1.5733333333rem; height: 1.5733333333rem; padding: 0.0666666667rem; border: 1px solid #e6e6e6; border-radius: 0.1333333333rem; }
+
+.quick-loan-body li .content { display: inline-block; vertical-align: top; margin: -0.16rem 0 0 0.4rem; }
+
+.quick-loan-body li .content h3 { color: #333; font-size: 0.4266666667rem; line-height: 0.64rem; }
+
+.quick-loan-body li .content p { color: #999; font-size: 0.3466666667rem; line-height: 0.64rem; }
+
+.quick-loan-body li .content p strong { color: #fa5d5d; margin-left: 0.1333333333rem; margin-right: 0.3333333333rem; }
+
+.quick-loan-body li:after { content: ""; display: inline-block; position: absolute; height: 0.2933333333rem; width: 0.28rem; top: 1rem; right: 0.4666666667rem; -webkit-transform: rotate(45deg); transform: rotate(45deg); border-top: 1px solid #999; border-right: 1px solid #999; }
+
+.popup-select .overlay { width: 100%; height: 100%; background: rgba(0, 0, 0, 0.7); position: fixed; top: 0; }
+
+.popup-select .content { width: 100%; position: fixed; bottom: 0; background: #fff; text-align: center; height: 8rem; }
+
+.popup-select .content span.close { display: inline-block; position: absolute; left: 0.2666666667rem; top: 0.5333333333rem; width: 0.6666666667rem; height: 0.6666666667rem; cursor: pointer; }
+
+.popup-select .content span.close:before, .popup-select .content span.close:after { content: ''; position: absolute; height: 2px; width: 100%; top: 50%; left: 0; margin-top: -1px; background: #666; }
+
+.popup-select .content span.close:before { -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transform: rotate(45deg); }
+
+.popup-select .content span.close:after { -webkit-transform: rotate(-45deg); -moz-transform: rotate(-45deg); -ms-transform: rotate(-45deg); -o-transform: rotate(-45deg); transform: rotate(-45deg); }
+
+.popup-select .content h3 { font-size: 0.5333333333rem; color: #333; line-height: 1.6rem; border-bottom: 1px solid #e6e6e6; }
+
+.popup-select .content .select-content { overflow-y: scroll; height: 6.4rem; }
+
+.popup-select .content h4, .popup-select .content a { display: block; font-size: 0.4266666667rem; color: #333; text-align: left; padding: 0 0.4rem; line-height: 1.3333333333rem; border-bottom: 1px solid #e6e6e6; position: relative; background: #fff; -webkit-transition: all 0.1s linear; transition: all 0.1s linear; }
+
+.popup-select .content h4:after, .popup-select .content a:after { content: ""; display: inline-block; position: absolute; height: 0.2933333333rem; width: 0.28rem; top: 0.5733333333rem; right: 0.4666666667rem; -webkit-transform: rotate(45deg); transform: rotate(45deg); border-top: 1px solid #999; border-right: 1px solid #999; }
+
+.popup-select .content h4.single-out { color: #bbb; font-size: 0; }
+
+.popup-select .content h4.single-out span { font-size: 0.4266666667rem; display: inline-block; line-height: 0.6666666667rem; vertical-align: middle; }
+
+.popup-select .content h4.single-out small { font-size: 0.3733333333rem; }
+
+.popup-select .content h4.single-out:after { content: none; }
+
+.popup-select .content h4:hover, .popup-select .content a:hover { background: #f2f2f2; }
+
+.popup-select .content a.add-bank { padding-left: 1.0666666667rem; }
+
+.popup-select .content a.add-bank span.add { display: inline-block; position: absolute; left: 0.4rem; top: 0.4666666667rem; width: 0.4rem; height: 0.4rem; cursor: pointer; }
+
+.popup-select .content a.add-bank span.add:before, .popup-select .content a.add-bank span.add:after { content: ''; position: absolute; height: 2px; width: 100%; top: 50%; left: 0; margin-top: -1px; background: #666; }
+
+.popup-select .content a.add-bank span.add:after { -webkit-transform: rotate(90deg); -moz-transform: rotate(90deg); -ms-transform: rotate(90deg); -o-transform: rotate(90deg); transform: rotate(90deg); }
+
+.popup-in { -webkit-animation: popupIn 0.2s ease-out forwards; animation: popupIn 0.2s ease-out forwards; }
+	</style>
+	
+    <title>淇润贷款隐私政策协议</title>
+</head>
+<body style="font-size: 12px;">
+<div class="reg-agreement">
+    <div class="reg-wrap">
+        <h1>淇润贷款隐私政策协议</h1>
+        <p>淇润贷款APP系丹东市元宝区淇润小额贷款有限责任公司独立开发运营的APP。服务于广大用户。</p><br>
+        <p>丹东市元宝区淇润小额贷款有限责任公司(以下简称“公司”或“本公司”)公司，现以合法运营的淇润贷款手机应用程序，后续公司会根据实际情况和用户需求不时开发淇润贷款网页端。</p><br>
+        <p>淇润贷款非常重视用户个人信息和隐私权的保护，鉴于此，我们根据相关法律法规规定，制定本隐私权政策，帮助您了解我们将如何收集、使用并保护您的个人信息。本隐私权政策适用于我们提供的产品或服务，请您在使用我们的产品或服务前认真阅读并确认充分理解本隐私权政策，以便您做出您认为适当的选择。<strong>您使用我们提供的产品或服务，即意味着您已阅读本隐私权政策所有条款，并对本隐私权政策条款的含义及相应的法律后果已全部通晓并充分理解，并且同意我们按照本隐私权政策收集、使用并保护您的个人信息。如果您不同意本隐私权政策的部分或全部内容、或对本隐私权政策内容有任何疑问，您应立即停止使用我们提供的产品或服务，并通过淇润贷款客服与我们联系。</strong></p><br>
+        <strong>本隐私权政策已对与您的权益具有或可能具有重大关系的条款，及对我们具有或可能具有免责或限制责任的条款用粗体字予以标注，请您注意。</strong><br><br>
+        <strong>您可以从淇润贷款手机应用程序中查看隐私权政策内容，以便了解我们如何处理您的信息，以便审慎决策。</strong><br><br>
+        <strong>本隐私权政策将帮助您了解以下内容：</strong><br>
+        •	一.我们如何收集和使用您的个人信息<br>
+        •	二.我们如何共享、转让、公开披露您的个人信息<br>
+        •	三.我们如何保存您的个人信息<br>
+        •	四.我们如何保护您的个人信息<br>
+        •	五.您可以如何管理个人信息<br>
+        •	六.未成年人的个人信息保护<br>
+        •	七.通知和修订<br>
+        •	八.您如何联系我们<br>
+        •	九.可分割性<br>
+        •	十. 其他<br>
+        <strong>一.我们如何收集和使用您的个人信息</strong><br>
+        个人信息是指以电子或者其他方式记录的能够单独或者与其他信息结合识别特定自然人身份或者反映特定自然人活动情况的各种信息。我们将在如下流程中，基于实现该流程所需的目的收集您的个人信息：<br>
+        1.1	当您注册淇润贷款账号时，我们将收集您的手机号码、登录密码等个人生物识别信息，收集此类信息是为了满足相关法律法规的网络实名制要求并保护您的账号安全。<br>
+        1.2 当您使用我们提供的网络借贷服务时，您需进行银行账户绑定、出借、提现、还款等操作，我们和/或我们委托的存管银行将收集您的真实姓名、身份证件号码、银行账号信息和/或手机号码，并对您的身份信息及银行账户信息进行验证。收集此类信息是为了满足相关法律法规关于网络借贷业务资金存管的要求，如果您不提供此类信息，您可能无法正常使用我们的服务。<br>
+        1.3 当您希望通过我们提供的产品或服务获得借款时，我们将收集您的如下个人信息：<br>
+        •	1.3.1 您的真实姓名、身份证件号码、性别、手机号码、电子邮箱、婚姻状态、年龄、学历、户口所在地、现居住地（如居住地证明）、工作情况（如工作证明）、收入情况（如个人银行流水）、征信报告和其他财产证明（如房产、车产等）；<br>
+        •	1.3.2&nbsp;<strong>您的社保、公积金信息，，在此信息收集过程中可能需要您提供有关账户名、密码和短信验证码；</strong><br>
+        •	1.3.3 借款项目名称、借款金额、借款期限、借款用途、还款方式、还款来源、还款保障措施；<br>
+        •	1.3.4 借款资金运用情况，您的经营状况及财务状况、还款能力变化情况，您的借款逾期情况，以及您的涉诉情况、受行政处罚情况；<br>
+        •	1.3.5 您的通讯录、通话详单，您的亲戚朋友、联系人及其手机号码，请您确保您在向我们提供该信息时已经获得您的亲戚朋友、联系人的同意，以便我们、我们的关联方或合作方可以通过您提供的联系方式进行联系。如您向我们提供的亲戚朋友、联系人及其手机号码的行为未经过其本人同意，我们与您的亲戚朋友、联系人进行联系所发生的风险及责任将由您承担。<strong>当您违反与淇润贷款的约定时，为维护淇润贷款的合法权益，您同意淇润贷款可向与淇润贷款合作的律师事务所、催收机构，及淇润贷款认为可向您传达信息的亲戚朋友、联系人等披露您的违约信息；若淇润贷款与您的亲戚朋友、联系人等关联方存在纠纷未能协商解决的，淇润贷款可能会自行或通过催收机构、律师事务所、法院、仲裁委员会和其他有权机关与您联系，请您帮助淇润贷款或上述机构向您的亲戚朋友、联系人等关联方转达相关诉求，上述转达以您自愿为基础，并不会让您承担额外的法律义务或责任；</strong><br>
+        •	1.3.6 为实现本隐私权政策目的所需的、或者本隐私权政策或其他协议中经您授权许可的其他收集方式下所收集的信息。<br>
+        收集此类信息是为了完成借款人身份识别、信用审核和/或逾期账务提醒等，如果您不提供此类信息，您可能无法正常使用我们的服务。<br>
+        1.4 我们和/或我们委托的存管银行将收集您的借款记录、充值记录、出借记录、提现记录、还款记录以及您账户中的财产信息（包括总资产、出借金额、账户余额及积分等财产信息），收集此类信息是为了完成资金结算、账务核对以及提供信息报告等，以及满足相关法律法规的信息披露要求。<br>
+        1.5&nbsp;<strong>为更好地向您提供产品和服务，也为了我们自身的风险防控，以及保护各方的合法权益，您同意并授权我们可以通过您自主填写和提供的个人信息和资料自行或通过其他机构（包括但不限于征信机构、中国互联网金融协会及其他依法成立的行业协会、大数据服务机构及其他第三方机构，下同）依法收集您的额外资料和信息，以在您使用我们提供的产品或服务前期对您的履约情况、信用情况进行审核、在后期对您进行必要的催收、以及实现我们为您提供的各项服务，我们搜集的资料和信息范围包括但不限于：</strong><br>
+        •	1.5.1 您的其他个人信息，包括但不限于工作信息、学历信息以及能够单独或者与其他信息结合识别您个人身份的其他信息；<br>
+        •	1.5.2&nbsp;<strong>您在我们的关联方和合作方处留存以及形成的任何数据和信息，包括但不限于您的证券账户和/或银行账户信息等；您在我们、我们的关联方或合作方以及其他机构的网络平台上留存、形成、产生的有关法律文件以及任何个人信息或行为数据，包括但不限于您的交易信息、账户信息、借贷项目信息、履约或违约行为信息等；</strong><br>
+        •	1.5.3&nbsp;<strong>您的信用信息，包括但不限于您的征信记录和信用报告及其他信用信息；</strong><br>
+        •	1.5.4&nbsp;<strong>您的财产信息，包括但不限于您的店铺/企业经营状况、财税信息、房产信息、车辆信息、基金、保险、股票、信托、债券等投资理财信息和负债信息等；</strong><br>
+        •	1.5.5&nbsp;<strong>您在行政机关、司法机关留存的任何信息，包括但不限于户籍信息、工商信息、诉讼信息、执行信息和违法犯罪信息等；</strong><br>
+        •	1.5.6&nbsp;<strong>与您申请或使用的产品或服务相关的、您留存在其他自然人、法人和组织的其他相关信息。</strong><br>
+        1.6&nbsp;<strong>您同意我们可以自行或通过合作方（包括但不限于征信机构、中国互联网金融协会及其他依法成立的行业协会、大数据服务机构及其他第三方合作机构）对您提交或我们搜集的用户信息（包括但不限于您的个人身份证信息等）进行核实、验证，并对获得的核实、验证结果进行查看、收集、使用和留存等操作。</strong><br>
+        1.7 我们将在您使用我们提供的产品或服务的过程中收集您的个人常用设备信息（包括设备名称、设备型号、设备识别码、操作系统和应用程序版本）和日志信息（如访问内容、IP地址、访问日期和时间及访问记录等），收集这些信息是为了向您提供更好的产品和/或服务并改善用户体验。<br>
+        1.8&nbsp;<strong>您在此同意并授权，我们可以直接将您的个人信息和资料用于如下用途：</strong><br>
+        •	1.8.1&nbsp;<strong>进行用户身份识别、资料核查和验证，以审核用户的履约情况、信用情况，确保交易的合理性、安全性和防范违法犯罪活动；</strong><br>
+        •	1.8.2&nbsp;<strong>为向您提供适合于您的服务，并持续维护、改善、优化该等服务，对您的信息进行内部归类、模型建设和分析等内部使用；</strong><br>
+        •	1.8.3&nbsp;<strong>用于预防、发现、调查欺诈、危害安全、非法或违反与我们或我们关联方协议、政策或规则的行为，以保护您、我们的其他用户、我们或我们关联方的合法权益；</strong><br>
+        •	1.8.4&nbsp;<strong>我们可能会将来自某项服务的信息与来自其他服务的信息结合起来，以便为您提供更优质、个性化的服务、内容和建议；</strong><br>
+        •	1.8.5&nbsp;<strong>用于向您收取应支付的各类费用（如有）；</strong><br>
+        •	1.8.6&nbsp;<strong>有针对性地向您推荐我们提供的商品、服务或推广活动，以及与我们的关联方、合作方共享，以向您提供或推荐我们的关联方、合作方的商品、服务或推广活动。您同意我们、我们的关联方及合作方通过站内信、电子邮件、电话、短信等方式向您提供、发送服务状态的通知、营销活动及其他商业性信息。如不需要我们推广相关信息，您可联系淇润贷款客服取消、退订该类信息推广服务；</strong><br>
+        •	1.8.7&nbsp;<strong>为实现本隐私权政策目的所需的、或者本隐私权政策或其他协议中经您授权许可的其他使用方式。</strong><br>
+        1.9&nbsp;<strong>您充分知晓，以下情形中，我们收集、使用个人信息无需征得您的授权或同意：</strong><br>
+        •	1.9.1 与国家安全、国防安全有关；<br>
+        •	1.9.2 与公共安全、公共卫生、重大公共利益有关；<br>
+        •	1.9.3与犯罪侦查、起诉、审判和判决执行等有关；<br>
+        •	1.9.4 出于维护个人信息主体或其他个人的生命、财产等重大合法权益但又很难得到本人同意的；<br>
+        •	1.9.5 所收集的个人信息是个人信息主体自行向社会公众公开的；<br>
+        •	1.9.6 从合法公开披露的信息中收集的您的个人信息，如合法的新闻报道、政府信息公开等渠道；<br>
+        •	1.9.7 根据您的要求签订合同所必需的；<br>
+        •	1.9.8用于维护所提供的产品与/或服务的安全稳定运行所必需，例如发现、处置产品与/或服务的故障；<br>
+        •	1.9.9 为合法的新闻报道所必需，学术研究机构基于公共利益开展统计或学术研究所必要，且对外提供学术研究或描述的结果时，对结果中所包含的个人信息进行匿名化处理的；以及法律法规规定的其他情形。<br>
+        1.10 您知晓并同意，在收集您的个人信息后，我们可能会通过技术手段对您的个人信息进行脱敏。<strong>我们有权在不透露您个人信息的前提下使用已经脱敏的信息。</strong><br>
+        <strong>二.我们如何共享、转让、公开披露您的个人信息</strong><br>
+        2.1 我们承诺会根据相关法律法规及监管规定对您的个人信息（包括您主动提供的和我们收集、记录的所有数据、信息、资料和相应的交易行为记录、交易文件，下同）承担保密义务。但为了向您提供更多元化、个性化、优质的服务，您同意并授权我们在以下情形下将您的信息向第三方进行共享。并且，我们将促使该等第三方在使用您信息的过程中对您的信息采取适当保密与安全措施：<br>
+        •	2.0.1 事先获得您的明确同意或授权；<br>
+        •	2.0.2 根据可适用的法律法规、法律程序的要求、强制性的行政或司法要求所必须的情况下进行提供；<br>
+        •	2.0.3提供给依法设立的征信机构和个人信用数据机构，以供有关单位和个人依法查询和使用；<br>
+        •	2.0.4提供给中国互联网金融协会及其他合法成立的行业协会，以供有关单位和个人依法查询和使用，并按照中国互联网金融协会及其他行业协会的要求依法进行信息披露和展示；<br>
+        •	2.0.5 在法律法规允许的范围内，为维护我们、我们的关联方或合作方，您或其他用户，或社会公众利益、财产或安全免遭损害而有必要提供；<br>
+        •	2.0.6 提供给我们的关联方、合作方以用于现在或将来向您提供我们、我们的关联方、合作方的相关服务，具体的服务可能包括借贷服务、理财服务等，您在此确认前述服务是您希望获得的（包括但不限于对您的个人资料和信息进行核实、对您的信用情况进行评估以决定向您提供前述服务的可行性、合理性以及决定提供服务的相关条款和条件等）；<br>
+        •	2.0.7 符合我们、我们的关联方、合作方与您签署的相关协议（包括在线签署的电子协议以及相应的平台规则）或其他的法律文件约定所提供；<br>
+        •	2.0.8 如我们或我们的关联方涉及合并、分立、收购、资产或业务转让或类似的交易，您的个人信息可能作为此类交易的一部分而被共享，我们将确保该等信息在共享时的机密性，您同意对此予以认可和理解；<br>
+        •	2.0.9 基于学术研究而使用；<br>
+        •	2.1.0 基于符合法律法规的社会公共利益而使用；<br>
+        •	2.1.1 为实现本隐私权政策目的所需的、或者本隐私权政策或其他协议中经您授权许可的其他共享方式。<br>
+        2.2 基于服务用户之目的，在我们的关联方、合作方同意承担保密义务的情况下，我们可能会与我们的关联方、合作方共享您的个人资料和信息，以便我们的关联方、合作方向您展示我们提供的商品、服务或推广活动。<br>
+        2.3 当您使用或申请使用我们的关联方、合作方提供的服务或与其或拟与其进行交易时，我们可能会将您的个人信息和资料共享与该等关联方、合作方，使其可以对您的个人信息和资料进行核实、分析。<br>
+        2.4 您对其他用户信息的使用：<br>
+        在不违反我们与其他用户、合作机构之间的协议的前提下，发生如下任一情形时，您有权要求我们提供与您发生交易的其他用户、合作机构的信息和资料，且我们提供的该等信息和资料仅以在如下情形发生时使用并以维护您的合法权益所必须为限：<br>
+        •	2.4.1 与您交易的其他用户、合作机构发生了与您签署的法律文件项下的违约行为；<br>
+        •	2.4.2 您已依法对与您交易的其他用户提起了有关您与该其他用户通过公司的服务进行的交易有关的仲裁或诉讼并提供了有效的立案（受理）证明文件。<br>
+        •	2.4.3 发生了有碍您在通过我们的产品进行的交易项下相关权益实现的情况，包括但不限于公司被吊销营业执照或被解散、清算、宣告破产以及其他情形。<br>
+        •	2.4.4对于您通过与我们签署法律文件或向我们申请披露而获知的其他用户、合作机构的资料和信息，您同意并确认：除非法律法规另有规定，或者有权的仲裁机构、司法、行政等权力机关的要求，您仅可将该等资料和信息用于实现、维护您在与该其他用户、合作机构签署的法律文件项下的权益以及履行您在该等法律文件项下的相关义务，不得将该等资料和信息用于其他用途，更不得非法出售该等信息和资料。<br>
+        2.5 除以下情形外，我们不会将您的个人信息转让给任何公司、组织和个人：<br>
+        •	2.5.1 事先获得您的明确同意或授权；<br>
+        •	2.5.2 根据可适用的法律法规、法律程序的要求、强制性的行政或司法要求所必须的情况进行提供；<br>
+        •	2.5.3 符合我们、我们的关联方、合作方与您签署的相关协议（包括在线签署的电子协议以及相应的平台规则）或其他的法律文件约定所提供；<br>
+        •	2.5.4 如我们或我们的关联方涉及合并、分立、收购、资产或业务转让或类似的交易，您的个人信息可能作为此类交易的一部分而被转移，我们将确保该等信息在转移时的机密性，您同意对此予以认可和理解。<br>
+        2.6 我们将会在以下情况下公开披露您的个人信息：<br>
+        •	2.6.1 根据您的需求，在您明确同意的披露方式下披露您所指定的个人信息；<br>
+        •	2.6.2 根据法律法规的要求、强制性的行政执法或司法要求所必须提供您个人信息的情况下，我们将会依据所要求的个人信息类型和披露方式公开披露您的个人信息。<br>
+        <strong>三.我们如何保存您的个人信息</strong><br>
+        3.1 保存地域<br>
+        您的个人信息将储存于中华人民共和国境内。<br>
+        3.2 保存期限<br>
+        <strong>根据相关法律法规的规定，网络借贷业务中借贷合同应至少保存至合同到期后五年，信息披露内容应自披露之日起保存至少五年。因此，除法律法规另有规定外，我们将永久保存您的个人信息以及相关网络借贷业务数据。</strong><br>
+        您的个人信息经匿名化处理后将形成可以使用及流通的数据，我们对此类数据的保存及处理无需另行通知并征得您的同意。<br>
+        3.3 安全事件<br>
+        •	3.3.1 如不幸发生个人信息安全事件后，我们将按照法律法规的要求，及时向您告知安全事件的基本情况和可能的影响、我们已采取或将要采取的处理措施、您可自主防范和降低的风险的建议、对您的补救措施等。<strong>我们会及时将事件相关情况以站内通知、短信通知、电话、邮件等您预留的联系方式告知您，难以逐一告知时我们会采取合理、有效的方式发布公告。</strong><br>
+        •	3.3.2 我们会及时处置系统漏洞、网络攻击、病毒侵袭及网络侵入等安全风险。在发生危害网络安全的事件时，<strong>我们会按照网络安全事件应急预案，及时采取相应的补救措施，并按照规定向有关主管部门报告。</strong><br>
+        •	3.3.3 如果我们的物理、技术或管理防护设施遭到破坏，导致信息被非授权访问、公开披露、篡改或损毁，导致您的合法权益受损，我们将严格依照法律的规定承担相应的责任。<br>
+        <strong>四.我们如何保护您的个人信息</strong><br>
+        4.1 我们非常重视个人信息安全，将采取一切合理可行的技术安全措施，保护您的个人信息：<br>
+        •	4.1.1我们已经荣获公安部授予的“信息系统安全等级保护”三级备案证明。它是用于保护信息和存储、传输、处理这些信息的信息系统分等级实行安全保护，保护出借人与借款人的信息安全。<br>
+        •	4.1.1 我们建立了数据分级制度，对您的手机号等个人敏感信息全程进行加密处理，并设置严格的数据访问权限，确保您的个人信息安全；<br>
+        •	4.1.2 我们不时聘请安全专家为技术人员提供相应培训，并在技术部内部设置相应的安全专家检查系统的安全性。<br>
+        4.2 尽管我们采取了上述技术安全措施，但请您理解，在互联网行业由于技术的限制和飞速发展以及可能存在的各种恶意攻击手段，即便我们竭尽所能加强安全措施，也不可能始终保证信息的百分之百安全。请您了解，您使用我们的产品和/或服务时所用的系统和通讯网络，有可能因超出我们的控制能力之外的其他因素而出现安全问题。如您发现自己的个人信息泄密，尤其是您的账户或密码发生泄漏，您应该立即通过淇润贷款客服与我们取得联系，以便我们采取相应措施。<br>
+        <strong>五.您可以如何管理个人信息</strong><br>
+        我们非常重视并保护您关于管理个人信息的权利，并为您提供了管理个人信息的方法。您有权利访问、更正、撤销自己的信息并保护自己的隐私和安全。<br>
+        5.1 访问权<br>
+        除法律法规规定的例外情况，无论您何时使用我们的服务，我们都会力求让您顺利访问自己的个人信息。<strong>如果您希望访问或编辑您账户中的个人资料信息（包括但不限于手机号码、登录密码、手势密码、银行账户信息等），您可以在APP端中执行此类操作，或联系淇润贷款客服进行编辑；</strong><br>
+        5.2 更正权<br>
+        当您需要更新您的个人信息时，或发现我们处理您的个人信息有错误时，您有权做出更正或更新。<strong>您可以自行在APP端进行更正，或通过反馈与报错等将您的更正申请提交给我们。</strong>在您进行更新或更正前，我们可能会现要求您验证自己的身份，然后再处理您的请求。<br>
+        5.3 撤销权<br>
+        <strong>您可以改变您授权同意的范围或撤回您的授权，但您撤回同意或授权后，我们可能将无法继续为您提供撤回同意或授权所对应的服务。同时，您知悉并理解，在您撤回同意或授权前提供的个人信息，我们将继续依照可适用的法律法规规定及本隐私权政策进行保存或披露。</strong><br>
+        5.4 注销权<br>
+        您可以通过拨打淇润贷款上公布的淇润贷款客服电话申请注销您的账户，一旦您注销账户，我们将停止为您提供服务，因此请您谨慎操作。<strong>但您知悉并理解，在您注销账户前提供的个人信息，我们将继续依照可适用的法律法规规定及本隐私权政策进行保存或披露。</strong><br>
+        5.5 管理问题<br>
+        如果您无法通过上述方式访问、更正或撤销您的个人信息，或者您无法完成账户注销，或者您就我们收集、使用您信息存在任何疑问，您都可以通过淇润贷款客服与我们联系。为保障安全，我们可能需要您提供书面请求，或以其他方式证明您的身份。我们将在收到您的反馈并验证您身份后尽快答复您的相关请求。<br>
+        我们将尽合理商业努力，满足您对于个人信息的访问、更正、撤销及账户注销的要求。但对于无端重复、需要过多技术手段、给他人合法权益带来风险或者非常不切实际的请求，我们可能会予以拒绝。<br>
+        对于您合理的请求，我们原则上不收取费用，但对多次重复、超出合理限度的请求，我们将视情况收取一定成本费用。<br>
+        5.6 例外<br>
+        按照法律法规要求，以下情况中，<strong>我们将无法响应您的请求：</strong><br>
+        •	5.6.1 与国家安全、国防安全有关的；<br>
+        •	5.6.2 与公共安全、公共卫生、重大公共利益有关的；<br>
+        •	5.6.3 与犯罪侦查、起诉和审判等有关的；<br>
+        •	5.6.4 有充分证据表明您存在主观恶意或滥用权利的；<br>
+        •	5.6.5 响应您的请求将导致您或其他个人、组织的合法权益受到严重损害的。<br>
+        <strong>六.未成年人的个人信息保护</strong><br>
+        6.1&nbsp;<strong>我们非常重视对未成年人个人信息的保护</strong><br>
+        如您是18周岁以下的未成年人，在使用我们的服务前，<strong>请务必要求您的监护人仔细阅读本隐私权政策，并请您在征得您的监护人同意的前提下使用我们的服务或向我们提供信息。</strong><br>
+        6.2&nbsp;<strong>补救措施</strong><br>
+        如果您未能取得您监护人的同意或您未同意您的被监护人使用我们的服务并向我们提供信息，<strong>请您或被监护人立即停止使用我们的服务并及时与我们取得联系。</strong>在收到您的书面通知而知晓或我们自行知晓，我们在未事先获得监护人同意的情况下收集了未成年人的个人信息时，我们会立即停止相关信息收集及使用。<br>
+        <strong>七.通知和修订</strong><br>
+        本隐私权政策将会随着我们的业务的发展进行更新，以便为您提供更好的服务。我们会通过APP或其他平台上发出更新版本并在生效前通过公告或以其他适当方式提醒您相关内容的更新，请您及时访问以便了解最新的隐私权政策。<br>
+        <strong>八.您如何联系我们</strong><br>
+        8.1 淇润贷款客服<br>
+        如果您对本隐私权政策有任何疑问、意见或建议，或您在使用我们提供的服务时，就您的个人信息的收集、使用、共享、访问、更正、撤销等相关事宜有任何意见或建议，或您在使用我们提供的服务时遇到任何问题，请发送邮件至hezuo@xiaoedaikuan.com或您都可以通过淇润贷款APP上公布的客服微信（xiaomakefu002）与我们联系。<br>
+        一般情况下，我们将在三十天内回复。如果您对我们的回复不满意，特别是我们的个人信息处理行为损害了您的合法权益，您还可以向网信、电信、公安以及工商等监管部门进行投诉或举报。<br>
+        8.2 特别提示<br>
+        •	i. 我们提醒您，如您反馈的问题涉及您的个人信息，尤其是您的个人敏感信息，请您不要直接在电话中进行透露，我们将会在确保您个人信息安全的情况下与您进一步沟通。<br>
+        •	ii. 部分情况下，为保障您个人信息的安全，我们可能需要您提供书面请求，或以其他方式证明您的身份。我们将在收到您的反馈并验证您的身份后尽快答复您的相关请求。<br>
+        <strong>九.可分割性</strong><br>
+        <strong>如果本隐私权政策的任何条款在任何程度上被认定无效或不可执行，本隐私权政策的其余部分不应受其影响且应在法律允许的最大程度内予以执行。本隐私权政策中任何无效或不可执行的条款应被另一有效且可执行的条款取代，并且该条款应具有与该不可执行的条款的原意最接近的效力。</strong><br>
+        <strong>十.&nbsp;其他</strong><br>
+        如本隐私权政策与淇润贷款的用户注册/服务协议中规定的个人信息保护条款存在不一致或矛盾之处，请以本隐私权政策的条款为准。<br><br>
+
+        <strong>附：名词解释</strong><br>
+        为了帮助您更好地理解本隐私权政策，将前述条款中的部分名词进行如下解释：<br>
+        •	<strong>淇润贷款</strong>或<strong>我们</strong>丹东市元宝区淇润小额贷款有限责任公司全称，淇润贷款由丹东市元宝区淇润小额贷款有限责任公司独产开发运营的一款金融产品。<br>
+        •	<strong>个人敏感信息</strong>是指一旦泄露、非法提供或滥用可能危害人身和财产安全，极易导致个人名誉、身心健康受到损害或歧视性待遇等的个人信息，本隐私权政策中涉及的个人敏感信息包括：姓名、身份证件号码、手机号码、银行账号、个人生物识别信息等。<br>
+        •	<strong>匿名化</strong>是指通过对个人信息的技术处理，使得个人信息主体无法被识别，且处理后的信息不能被复原的过程。<br>
+        •	<strong>设备</strong>是指可用于使用淇润贷款产品和/或服务的装置，例如桌面设备、平板电脑或智能手机等。<br>
+
+    </div>
+</div>
+
+
+
+
+
+
+</body></html>
