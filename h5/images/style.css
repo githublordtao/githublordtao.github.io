@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+body{ background:url(../images/bg.jpg) center top repeat-y; background-size:100% auto; font-size:.25rem;}
+
+/* --------------index-start-------------- */
+.header { position:relative; box-sizing:border-box; padding-top:0.15rem; height:9rem; background-size:100% auto;}
+.banner { width:7.1rem; overflow:hidden; margin:0 auto;}
+.header .btn { display:block; width:7.50rem; margin:.00rem auto 0;}
+.banner .swiper-container { width: 100%; height: 100%;}
+.banner .swiper-slide { text-align: center; font-size: 18px; background: #none;/* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox;
+ display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center;
+ -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
+.gameList li a p { font-size:.24rem; color:#fff; line-height:.38rem;}
+.downIntro { box-sizing:border-box; padding-top:.25rem; margin-top:.35rem; position:relative;}
+.downIntro .notice { position:absolute; right:0; top:0; display:block; width:1.96rem; height:.44rem; line-height:.44rem; border-radius:.44rem 0 0 .44rem; color:#fff; background:#cd4d00;
+font-size:.24rem; text-indent:.26rem;}
+.downIntro .don { margin-left:.35rem; width:5.76rem;}
+.container { width:7.1rem; margin:0 auto;}
+.teach { width:6.75rem; margin:0 auto;}
+.teachBox { background:rgba(255,255,255,0.1); border-radius:6px; overflow:hidden;}
+.textTit { padding-left:.26rem; background:url(../images/a_37.png) left center no-repeat; background-size:.11rem auto; line-height:.8rem; overflow:hidden;}
+.textTit p{ color:#ffbf13; float:left; font-size:.3rem;}
+.textTit span { float:right; font-size:.2rem; color:#fff;}
+.grayBox { float:left; background:#fff; width:5.25rem; height:.6rem; line-height:.6rem; overflow:hidden; border-radius:4px; overflow:hidden;}
+.grayBox>span{ float:left; width:1.28rem; display:block; text-align:center; background:#c1292d; color:#fff; font-size:.26rem; border-radius:4px;}
+.grayBox p { font-weight:bold; width:3.97rem; float:left; font-size:.26rem; color:#383838; text-align:center;}
+.grayBox p>a { color:#fa0000; font-size:.3rem; font-weight:bold;}
+.text li> a { border-radius:4px; display:block; float:right; color:#fff; text-align:center; line-height:.6rem; height:.6rem; width:1.6rem; font-size:.24rem; background:#a50004;}
+.text li { margin-bottom:.22rem; overflow:hidden;}
+.downLoad h2 { text-align:center; margin-bottom:.25rem; font-size:.32rem; color:#fff; line-height:.32rem;}
+.downLoad ul { padding-left:.5rem;}
+.downLoad li { overflow:hidden;}
+.downLoad li span { display:block; color:#d30000; background:#fedc4e; float:left; text-align:center; height:.46rem; line-height:.46rem; width:.46rem; border-radius:50%;}
+.downLoad li p { margin-left:.19rem; margin-bottom:.33rem; float:left; line-height:.46rem; font-size:.3rem; color:#fff;}
+.downLoad li p a { color:#4d4d4d; background:#fffc00;}
+.teachTit { margin-bottom:.45rem;}
+.teach { padding-bottom:.3rem; border-bottom:.12rem solid #2f0f11;}
+.line { height:.12rem; background:#2f0f11;}
+.introduce { padding-bottom:.3rem;}
+.hotGame ul { overflow:hidden;}
+.hotGame li { float:left; margin-right:.16rem; width:1.65rem; margin-bottom:.21rem; height:.55rem;}
+.hotGame li:nth-child(4n){ margin-right:0;}
+.hotGame li a { display:block; background:#fff; text-align:center; line-height:.55rem; font-size:.22rem; color:#3f3f3f; border:1px solid #fff; border-radius:.55rem;
+box-sizing:border-box;}
+.hotGame .bg1 a { background:#ffbf13; border:1px solid #ffbf13; color:#270301;}
+.hotGame .bg2 a { background:#d5ff13; border:1px solid #d5ff13; color:#270301;}
+.hotGame .bg3 a { background:#ee5eff; border:1px solid #ee5eff; color:#270301;}
+.hotGame .bg4 a { background:#ff1319; border:1px solid #ff1319; color:#fff;}
+.hotGame .bg5 a { background:#0bbb41; border:1px solid #0bbb41; color:#270301;}
+.hotGame .bg6 a { background:#00b3ce; border:1px solid #00b3ce; color:#270301;}
+.hotGame .bg7 a { background:#ff6113; border:1px solid #ff6113; color:#270301;}
+.hotGame .cof a { color:#fff;}
+.hotGame li:last-child { width:3.44rem;}
+.hotGame li:last-child a{ color:#b61100;}
+.hotGame li:last-child a span{ font-weight:bold; color:#ff2913;}
+.introducek { padding-bottom:.57rem;}
+.introducek .swiper-container { width: 100%; height: 100%;}
+.introducek .swiper-slide { text-align: center; font-size: 18px; background: #fff; /* Center slide text vertically */ display: -webkit-box; display: -ms-flexbox;
+ display: -webkit-flex; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; -webkit-justify-content: center; justify-content: center;
+ -webkit-box-align: center; -ms-flex-align: center; -webkit-align-items: center; align-items: center;}
+.inp input { float:left; width:5.5rem; height:.68rem; background:#000000; border-radius:4px; font-size:.24rem; color:#a00004; padding:0; text-indent:.2rem; border:1px solid #a00004;}
+.inp input :-moz-placeholder { color: #a00004; opacity: 1; }
+.inp input::-moz-placeholder {  color: #a00004; opacity: 1;}
+.inp input:-ms-input-placeholder {  color: #a00004;  opacity: 1;}
+.inp input::-webkit-input-placeholder { color: #a00004; opacity: 1;}
+.inp button { float:right; border:none; border-radius:4px; color:#fff; background:#a00004; font-size:.24rem; height:.68rem; line-height:.68rem; width:1.3rem;}
+.inp { padding:.25rem 0 .35rem; overflow:hidden; border-bottom:1px solid #d3d3d3;}
+.talkInfor { padding:.35rem 0 .25rem; border-bottom:1px solid #d3d3d3;}
+.talkInfor h2 { margin-bottom:0; line-height:.48rem; overflow:hidden; font-size:.32rem; color:#fff;}
+.talkInfor h2 span { float:right; font-size:.24rem}
+.talkInfor h2 p { float:left;}
+.talkInfor h3{ background:url(../images/a_53.png) left center no-repeat; padding-left:1.87rem; background-size:1.75rem auto; line-height:.48rem;
+font-size:.24rem; color:#fff;}
+.talkInfor p { font-size:.24rem; line-height:.36rem; color:#fff;}
+.footer { margin-top:.3rem;}
+.talkImg { position:relative; background:url(../images/a_49.png) center no-repeat; background-size:100%; height:2.61rem;}
+.star { position:absolute; right:.67rem; bottom:.24rem; overflow:hidden;}
+.star span { float:left; margin-left:.31rem; display:block; background:url(../images/star1.png) center no-repeat; width:.47rem; height:.47rem; background-size:100%;}
+.star span.current { background:url(../images/star.png) center no-repeat; background-size:100%;}
+.gameList { width:7.2rem; margin:0 auto;}

